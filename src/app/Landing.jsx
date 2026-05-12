@@ -69,6 +69,19 @@ function SecondaryButton({ href, children, className = "" }) {
   );
 }
 
+function LightButton({ href, children, className = "" }) {
+  return (
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
+      className={`inline-flex items-center justify-center gap-3 rounded-full bg-white px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-text)] shadow-[0_16px_34px_rgba(255,255,255,0.16)] transition hover:-translate-y-0.5 hover:bg-[var(--color-bg-soft)] ${className}`}
+    >
+      {children}
+    </a>
+  );
+}
+
 function DemoMockup() {
   return (
     <div className="relative mx-auto max-w-[430px]">
@@ -85,8 +98,8 @@ function DemoMockup() {
             <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
               <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#F4DFC0]">{heroDemo?.type}</p>
               <h3 className="mt-2 font-serif text-4xl">{heroDemo?.name}</h3>
-              <p className="mt-3 leading-7 text-white/86">Cuenta regresiva, ubicacion, fotos, regalos y RSVP en una experiencia lista para compartir.</p>
-              <Link to={heroDemo?.href || "/demo/quince-glam"} className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-[var(--color-text)]">
+              <p className="mt-3 leading-7 text-white/86">Cuenta regresiva, ubicación, fotos, regalos y RSVP en una experiencia lista para compartir.</p>
+              <Link to={heroDemo?.href || "/demo/quince-glam"} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full bg-[var(--color-gold)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[var(--color-gold-dark)]">
                 Ver demo <ChevronRight size={16} />
               </Link>
             </div>
@@ -135,10 +148,10 @@ export function Landing() {
               Invitaciones web para eventos inolvidables
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
-              Creamos la pagina de tu evento con cuenta regresiva, ubicacion, fotos, regalos y confirmacion de asistencia en un solo link.
+              Creamos la página de tu evento con cuenta regresiva, ubicación, fotos, regalos y confirmación de asistencia en un solo link.
             </p>
             <p className="mt-4 max-w-2xl text-base font-semibold leading-7 text-[var(--color-text)]">
-              Bodas, 15 anos, bautismos, cumpleanos, recibidas y eventos especiales.
+              Bodas, 15 años, bautismos, cumpleaños, recibidas y eventos especiales.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <SecondaryButton href="#demos" className="w-full sm:w-auto">
@@ -163,9 +176,9 @@ export function Landing() {
       <section id="incluye" className="bg-[var(--color-surface-warm)] py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5">
           <SectionHeading
-            eyebrow="Que incluye"
+            eyebrow="Qué incluye"
             title="Todo lo que tus invitados necesitan"
-            text="Todo lo que tus invitados necesitan, reunido en una experiencia digital simple, elegante y facil de compartir."
+            text="Todo lo que tus invitados necesitan, reunido en una experiencia digital simple, elegante y fácil de compartir."
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {includes.map((item, index) => {
@@ -185,7 +198,7 @@ export function Landing() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 sm:py-20">
-        <SectionHeading eyebrow="Tipos de eventos" title="Una web para cada celebracion" text="Adaptamos tono, imagenes, secciones y recorrido segun el tipo de evento que estas organizando." />
+        <SectionHeading eyebrow="Tipos de eventos" title="Una web para cada celebración" text="Adaptamos tono, imágenes, secciones y recorrido según el tipo de evento que estás organizando." />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {eventTypes.map((event) => (
             <article key={event.title} className="group rounded-3xl border border-[var(--color-border)] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
@@ -202,7 +215,7 @@ export function Landing() {
       <section id="demos" className="border-y border-[var(--color-border)] bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-5">
           <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-            <SectionHeading eyebrow="Demos" title="Explora estilos reales antes de elegir" text="Cada demo muestra como puede verse una invitacion completa, con secciones listas para adaptar a tu evento." />
+            <SectionHeading eyebrow="Demos" title="Explorá estilos reales antes de elegir" text="Cada demo muestra cómo puede verse una invitación completa, con secciones listas para adaptar a tu evento." />
             <PrimaryButton href={consultUrl}>
               <MessageCircle size={18} /> Consultar por WhatsApp
             </PrimaryButton>
@@ -217,7 +230,7 @@ export function Landing() {
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">{demo.type}</p>
                   <h3 className="mt-2 font-serif text-2xl text-[var(--color-text)]">{demo.name}</h3>
                   <p className="mt-3 min-h-20 leading-7 text-[var(--color-muted)]">{demo.description}</p>
-                  <Link to={demo.href} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-4 py-3 text-sm font-bold text-[var(--color-text)] transition hover:border-[var(--color-gold)]">
+                  <Link to={demo.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-gold)] px-4 py-3 text-sm font-bold text-white transition hover:border-[var(--color-gold-dark)] hover:bg-[var(--color-gold-dark)]">
                     Ver demo <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -228,7 +241,7 @@ export function Landing() {
       </section>
 
       <section id="planes" className="mx-auto max-w-7xl px-5 py-16 sm:py-20">
-        <SectionHeading eyebrow="Planes" title="Elegi el nivel de detalle que necesita tu evento" text="Propuestas claras para resolver desde una invitacion simple hasta una experiencia web a medida." align="center" />
+        <SectionHeading eyebrow="Planes" title="Elegí el nivel de detalle que necesita tu evento" text="Propuestas claras para resolver desde una invitación simple hasta una experiencia web a medida." align="center" />
         <div className="mt-10 grid gap-5 lg:grid-cols-3">
           {plans.map((plan) => (
             <article key={plan.name} className={`relative rounded-[2rem] border bg-white p-6 shadow-sm ${plan.recommended ? "border-[var(--color-gold)] shadow-[0_24px_70px_rgba(197,155,87,0.22)] lg:-mt-4" : "border-[var(--color-border)]"}`}>
@@ -249,14 +262,14 @@ export function Landing() {
                 <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">Ideal para</p>
                 <p className="mt-2 leading-7 text-[var(--color-muted)]">{plan.idealFor}</p>
               </div>
-              <PrimaryButton href={whatsappUrl(`Hola, quiero consultar por el plan ${plan.name} para una invitacion web.`)} className="mt-6 w-full">
+              <PrimaryButton href={whatsappUrl(`Hola, quiero consultar por el plan ${plan.name} para una invitación web.`)} className="mt-6 w-full">
                 {plan.cta}
               </PrimaryButton>
             </article>
           ))}
         </div>
         <p className="mx-auto mt-7 max-w-3xl text-center leading-7 text-[var(--color-muted)]">
-          Los precios pueden variar segun el nivel de personalizacion, urgencia y funcionalidades adicionales.
+          Los precios pueden variar según el nivel de personalización, urgencia y funcionalidades adicionales.
         </p>
         <div className="mt-10 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-warm)] p-6">
           <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
@@ -264,7 +277,7 @@ export function Landing() {
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-gold-dark)]">Extras</p>
               <h3 className="mt-2 font-serif text-3xl text-[var(--color-text)]">Funcionalidades adicionales</h3>
             </div>
-            <PrimaryButton href={whatsappUrl("Hola, quiero consultar extras para una invitacion web.")}>
+            <PrimaryButton href={whatsappUrl("Hola, quiero consultar extras para una invitación web.")}>
               Consultar extras
             </PrimaryButton>
           </div>
@@ -281,9 +294,9 @@ export function Landing() {
       <section className="bg-[var(--color-text)] py-16 text-white sm:py-20">
         <div className="mx-auto max-w-7xl px-5">
           <div className="max-w-3xl">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-champagne)]">Como funciona</p>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-champagne)]">Cómo funciona</p>
             <h2 className="mt-3 font-serif text-4xl leading-tight text-white sm:text-5xl">Un proceso simple de punta a punta</h2>
-            <p className="mt-4 text-base leading-8 text-white/76 sm:text-lg">Un proceso simple para que tengas tu invitacion lista sin complicaciones.</p>
+            <p className="mt-4 text-base leading-8 text-white/76 sm:text-lg">Un proceso simple para que tengas tu invitación lista sin complicaciones.</p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-5">
             {steps.map((step, index) => (
@@ -297,15 +310,15 @@ export function Landing() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 sm:py-20">
-        <SectionHeading eyebrow="Comparacion" title="Por que elegir una invitacion web?" text="Una web permite ordenar la informacion, actualizarla y hacer que tus invitados encuentren todo en segundos." align="center" />
+        <SectionHeading eyebrow="Comparación" title="¿Por qué elegir una invitación web?" text="Una web permite ordenar la información, actualizarla y hacer que tus invitados encuentren todo en segundos." align="center" />
         <div className="mt-10 grid gap-5 lg:grid-cols-2">
           <article className="rounded-[2rem] border border-[var(--color-border)] bg-white p-6 shadow-sm">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6E9E3] text-[#A96754]"><X size={22} /></span>
-              <h3 className="font-serif text-3xl">Una imagen comun</h3>
+              <h3 className="font-serif text-3xl">Una imagen común</h3>
             </div>
             <ul className="mt-6 grid gap-4 text-[var(--color-muted)]">
-              {["Se pierde en WhatsApp", "No tiene confirmacion integrada", "No permite actualizar datos facilmente", "No reune mapa, fotos, regalos y detalles en un solo lugar"].map((item) => (
+              {["Se pierde en WhatsApp", "No tiene confirmación integrada", "No permite actualizar datos fácilmente", "No reúne mapa, fotos, regalos y detalles en un solo lugar"].map((item) => (
                 <li key={item} className="flex gap-3"><X className="mt-0.5 shrink-0 text-[#A96754]" size={18} /> {item}</li>
               ))}
             </ul>
@@ -313,10 +326,10 @@ export function Landing() {
           <article className="rounded-[2rem] border border-[var(--color-gold-light)] bg-[var(--color-surface-warm)] p-6 shadow-[0_20px_60px_rgba(197,155,87,0.18)]">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[var(--color-success)]"><Check size={22} /></span>
-              <h3 className="font-serif text-3xl">Una invitacion web</h3>
+              <h3 className="font-serif text-3xl">Una invitación web</h3>
             </div>
             <ul className="mt-6 grid gap-4 text-[var(--color-text)]">
-              {["Todo esta en un solo link", "Se puede compartir por WhatsApp, Instagram o QR", "Incluye ubicacion, fotos y confirmacion", "Se puede actualizar", "Se ve mas profesional"].map((item) => (
+              {["Todo está en un solo link", "Se puede compartir por WhatsApp, Instagram o QR", "Incluye ubicación, fotos y confirmación", "Se puede actualizar", "Se ve más profesional"].map((item) => (
                 <li key={item} className="flex gap-3"><Check className="mt-0.5 shrink-0 text-[var(--color-success)]" size={18} /> {item}</li>
               ))}
             </ul>
@@ -348,12 +361,12 @@ export function Landing() {
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-champagne)]">Consulta inicial</p>
-              <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">Listo para crear la web de tu evento?</h2>
-              <p className="mt-4 max-w-2xl text-lg leading-8 text-white/82">Contanos que estas organizando y te recomendamos el plan ideal.</p>
+              <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">¿Listo para crear la web de tu evento?</h2>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-white/82">Contanos qué estás organizando y te recomendamos el plan ideal.</p>
             </div>
-            <PrimaryButton href={consultUrl} className="bg-white text-[var(--color-text)] hover:bg-[var(--color-bg-soft)]">
+            <LightButton href={consultUrl}>
               <MessageCircle size={18} /> Consultar por WhatsApp
-            </PrimaryButton>
+            </LightButton>
           </div>
         </div>
       </section>
