@@ -148,15 +148,225 @@ export const recibidaBoldDemo = makeVariant(recibidaModernaDemo, {
   dressCode: { title: "Fiesta elegante", note: "Color, brillo o algo que diga: hoy se celebra." },
 });
 
+export const bodaMinimalDemo = makeVariant(bodaEleganteDemo, {
+  slug: "demo-boda-minimal",
+  template: "boda-minimal",
+  title: "Ana & Leo",
+  eyebrow: "Boda minimal",
+  intro: "Una celebracion serena, moderna y sin excesos, donde cada detalle respira elegancia.",
+  theme: { background: "#F8F8F5", primary: "#5E675A", primaryDark: "#232820", secondary: "#B7B0A3", accent: "#D8D0C0", soft: "#ECEAE3", text: "#24231F", muted: "#69675F" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1529634597503-139d3726fed5?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Menos, mejor", title: "Una boda simple y profunda", text: "Elegimos una estetica limpia para que lo importante se vea: el encuentro, la familia y la emocion.", quote: "La elegancia tambien puede ser calma." },
+  dressCode: { title: "Formal minimal", note: "Negro, blanco, gris, oliva, arena o tonos neutros. Reservamos blanco pleno para la novia." },
+});
+
+export const bodaTropicalDemo = makeVariant(bodaEleganteDemo, {
+  slug: "demo-boda-tropical",
+  template: "boda-tropical",
+  title: "Mili & Fran",
+  eyebrow: "Boda tropical",
+  intro: "Una fiesta con verde, flores intensas, cocktails y una noche pensada para bailar.",
+  theme: { background: "#FFFDF2", primary: "#0F8B6F", primaryDark: "#06483A", secondary: "#F97316", accent: "#F8D66D", soft: "#DFF4E8", text: "#17322D", muted: "#63736D" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Fiesta viva", title: "Celebrar a todo color", text: "Queremos una boda alegre, luminosa y relajada, con una ambientacion que invite a disfrutar.", quote: "Amor, musica y mesa larga." },
+  dressCode: { title: "Tropical elegante", note: "Verdes, coral, lino, estampas suaves o accesorios con color." },
+});
+
+export const quinceEditorialDemo = makeVariant(quinceGlamDemo, {
+  slug: "demo-quince-editorial",
+  template: "quince-editorial",
+  title: "Renata",
+  eyebrow: "Mis 15 editorial",
+  intro: "Una propuesta moderna, con contraste, fotos protagonistas y una estetica de revista.",
+  theme: { background: "#F6F3EF", primary: "#111111", primaryDark: "#000000", secondary: "#B08968", accent: "#EDE0D4", soft: "#E7D8C9", text: "#1F1E1C", muted: "#706B66" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Mi estilo", title: "Una noche con identidad", text: "Cada seccion puede sentirse como una produccion: fotos grandes, textos breves y una paleta sofisticada.", quote: "Que se vea diferente desde el primer scroll." },
+  dressCode: { title: "Black & nude", note: "Negro, nude, cobre, dorado suave o un look monocromo." },
+});
+
+export const quincePastelDemo = makeVariant(quinceGlamDemo, {
+  slug: "demo-quince-pastel",
+  template: "quince-pastel",
+  title: "Jazmin",
+  eyebrow: "Mis 15 pastel",
+  intro: "Una fiesta dulce, colorida y delicada, con flores, luces y detalles suaves.",
+  theme: { background: "#FFF9F6", primary: "#F48FB1", primaryDark: "#8E3B61", secondary: "#8BD3E6", accent: "#FDE68A", soft: "#FCE7F3", text: "#362B34", muted: "#7C6D76" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Dulce y luminosa", title: "Una noche para recordar", text: "Pensada para una celebracion romantica, fresca y muy fotografiable.", quote: "Todo empieza con un color que enamora." },
+  dressCode: { title: "Pasteles", note: "Rosa, lila, celeste, manteca, lavanda o champagne." },
+});
+
+export const bautismoVintageDemo = makeVariant(bautismoDelicadoDemo, {
+  slug: "demo-bautismo-vintage",
+  template: "bautismo-vintage",
+  title: "Amparo",
+  eyebrow: "Bautismo vintage",
+  intro: "Una celebracion familiar con detalles clasicos, tonos crema y una calidez muy de hogar.",
+  theme: { background: "#FFFBF2", primary: "#B08A5B", primaryDark: "#5D432C", secondary: "#D8BFAA", accent: "#E9D8A6", soft: "#F4E9D8", text: "#35291E", muted: "#776A5E" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Tradicion", title: "Un dia con historia familiar", text: "Ideal para una invitacion sobria, delicada y con aire clasico.", quote: "Los detalles simples guardan los recuerdos mas lindos." },
+  dressCode: { title: "Crema y claros", note: "Tonos crema, blanco, beige, celeste suave o rosa viejo." },
+});
+
+export const bautismoJardinDemo = makeVariant(bautismoDelicadoDemo, {
+  slug: "demo-bautismo-jardin",
+  template: "bautismo-jardin",
+  title: "Benicio",
+  eyebrow: "Bautismo jardin",
+  intro: "Una celebracion al aire libre, con verde suave, mesa familiar y tarde luminosa.",
+  theme: { background: "#FBFFF7", primary: "#77A464", primaryDark: "#3D5A32", secondary: "#A8DADC", accent: "#F6E7B7", soft: "#EAF5DF", text: "#243222", muted: "#687664" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1546015720-b8b30df5aa27?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Aire libre", title: "Una tarde de familia", text: "Un estilo natural para bautismos, comuniones o primeras celebraciones importantes.", quote: "Que el dia sea tan claro como este momento." },
+  dressCode: { title: "Jardin claro", note: "Verde seco, blanco, lino, beige o tonos pastel." },
+});
+
+export const cumplePoolDemo = makeVariant(cumpleInfantilDemo, {
+  slug: "demo-cumple-pool",
+  template: "cumple-pool",
+  title: "Paz cumple 8",
+  eyebrow: "Pool party",
+  intro: "Una tarde de pileta, juegos, helados y musica para festejar con amigos.",
+  theme: { background: "#F0FDFA", primary: "#0891B2", primaryDark: "#164E63", secondary: "#FB7185", accent: "#FDE047", soft: "#CCFBF1", text: "#17313A", muted: "#5E7278" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Sol y juegos", title: "Cumple con energia de verano", text: "La invitacion puede adaptarse para pileta, plaza, pelotero, camping o una tarde tematica.", quote: "Trae malla, toalla y ganas de jugar." },
+  dressCode: { title: "Pileta", note: "Malla, ojotas, protector solar y ropa comoda." },
+});
+
+export const cumpleBlackGoldDemo = makeVariant(cumpleInfantilDemo, {
+  slug: "demo-cumple-black-gold",
+  template: "cumple-black-gold",
+  title: "Lucas cumple 50",
+  eyebrow: "Black & gold",
+  intro: "Una noche elegante para brindar, cenar y celebrar con amigos.",
+  theme: { background: "#11100E", card: "#FFFFFF", primary: "#D6A94A", primaryDark: "#7B5A1E", secondary: "#2DD4BF", accent: "#F9E4A5", soft: "#F7ECD0", text: "#241E16", muted: "#72685C" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "A brindar", title: "Una celebracion con estilo", text: "Una opcion sobria para cumpleanos adultos, cenas, aniversarios o fiestas privadas.", quote: "La noche merece un brindis dorado." },
+  dressCode: { title: "Elegante noche", note: "Negro, dorado, blanco o un detalle con brillo." },
+});
+
+export const recibidaTechDemo = makeVariant(recibidaModernaDemo, {
+  slug: "demo-recibida-tech",
+  template: "recibida-tech",
+  title: "Nico ingeniero",
+  eyebrow: "Recibida tech",
+  intro: "Una fiesta moderna, con paleta electrica y energia de logro grande.",
+  theme: { background: "#F7FBFF", primary: "#2563EB", primaryDark: "#1E3A8A", secondary: "#06B6D4", accent: "#A7F3D0", soft: "#DBEAFE", text: "#111827", muted: "#64748B" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Mision cumplida", title: "Del final al brindis", text: "Un look fresco para carreras tech, ingenierias, diseno, economia o recibidas con onda urbana.", quote: "El codigo compilo: ahora se festeja." },
+  dressCode: { title: "Urbano", note: "Azul, negro, blanco, plateado o zapatillas con estilo." },
+});
+
+export const recibidaBrunchDemo = makeVariant(recibidaModernaDemo, {
+  slug: "demo-recibida-brunch",
+  template: "recibida-brunch",
+  title: "Mica licenciada",
+  eyebrow: "Brunch de recibida",
+  intro: "Una celebracion de dia, luminosa, relajada y perfecta para familia y amigos.",
+  theme: { background: "#FFFDF7", primary: "#D97706", primaryDark: "#7C2D12", secondary: "#84CC16", accent: "#FDE68A", soft: "#FEF3C7", text: "#2E261C", muted: "#74695F" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Celebrar de dia", title: "Un logro con mesa compartida", text: "Ideal para recibidas familiares, almuerzos, brindis de mediodia o celebraciones mas tranquilas.", quote: "Tambien se brinda con cafe y sol." },
+  dressCode: { title: "Casual elegante", note: "Claros, lino, vestidos, camisa o tonos calidos." },
+});
+
+export const aniversarioClasicoDemo = makeVariant(bodaEleganteDemo, {
+  slug: "demo-aniversario-clasico",
+  eventType: "aniversario",
+  template: "aniversario-clasico",
+  title: "25 anos juntos",
+  eyebrow: "Aniversario",
+  intro: "Celebramos una historia compartida con una cena intima, elegante y llena de recuerdos.",
+  theme: { background: "#FFFDF8", primary: "#9F7AEA", primaryDark: "#553C9A", secondary: "#D69E2E", accent: "#F6E7B7", soft: "#EEE7FF", text: "#2D2438", muted: "#72687B" },
+  story: { eyebrow: "Nuestra historia", title: "Un camino para celebrar", text: "Una opcion ideal para aniversarios de pareja, bodas de plata, bodas de oro o cenas familiares.", quote: "El amor tambien se celebra mirando hacia atras." },
+  dressCode: { title: "Cena elegante", note: "Violeta, dorado, negro, champagne o tonos de noche." },
+  rsvp: { whatsappMessage: "Hola, confirmo mi asistencia al aniversario. Mi nombre es:" },
+});
+
+export const babyShowerBotanicoDemo = makeVariant(bautismoDelicadoDemo, {
+  slug: "demo-baby-shower-botanico",
+  eventType: "baby-shower",
+  template: "baby-shower-botanico",
+  title: "Baby shower de Olivia",
+  eyebrow: "Baby shower",
+  intro: "Nos juntamos a celebrar la llegada de Olivia con una tarde dulce, natural y llena de amor.",
+  theme: { background: "#FAFFF7", primary: "#6B8F71", primaryDark: "#2F4F37", secondary: "#F4B8A8", accent: "#F6E7B7", soft: "#E7F3E6", text: "#243025", muted: "#697568" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1546015720-b8b30df5aa27?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Llega una nueva vida", title: "Una tarde para esperar con amor", text: "Paleta botanica, rosa suave y verdes para baby showers, gender reveal o bienvenida de bebe.", quote: "Ya te estamos esperando." },
+  dressCode: { title: "Botanico suave", note: "Verdes, blanco, rosa viejo, beige o lino." },
+  rsvp: { whatsappMessage: "Hola, confirmo mi asistencia al baby shower. Mi nombre es:" },
+});
+
+export const eventoCorporativoDemo = makeVariant(recibidaModernaDemo, {
+  slug: "demo-evento-corporativo",
+  eventType: "evento",
+  template: "evento-corporativo",
+  title: "Lanzamiento 2026",
+  eyebrow: "Evento corporativo",
+  intro: "Una invitacion sobria para presentar agenda, sede, acreditacion y confirmaciones.",
+  theme: { background: "#F8FAFC", primary: "#0F766E", primaryDark: "#134E4A", secondary: "#64748B", accent: "#99F6E4", soft: "#CCFBF1", text: "#0F172A", muted: "#64748B" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1800&q=90",
+    portrait: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=1200&q=90",
+  },
+  story: { eyebrow: "Agenda clara", title: "Una experiencia profesional", text: "Pensada para eventos institucionales, lanzamientos, jornadas, cenas empresariales o capacitaciones.", quote: "Toda la informacion importante, ordenada en un link." },
+  dressCode: { title: "Business casual", note: "Vestimenta profesional o segun el tipo de encuentro." },
+  rsvp: { mode: "form", whatsappMessage: "Hola, confirmo mi asistencia al evento corporativo. Mi nombre es:" },
+});
+
 export const templateVariantDemos = [
   bodaClasicaDemo,
   bodaBohoDemo,
+  bodaMinimalDemo,
+  bodaTropicalDemo,
   quinceDreamDemo,
   quinceNeonDemo,
+  quinceEditorialDemo,
+  quincePastelDemo,
   bautismoCieloDemo,
   bautismoNaturalDemo,
+  bautismoVintageDemo,
+  bautismoJardinDemo,
   cumpleKidsDemo,
   cumpleNocheDemo,
+  cumplePoolDemo,
+  cumpleBlackGoldDemo,
   recibidaMinimalDemo,
   recibidaBoldDemo,
+  recibidaTechDemo,
+  recibidaBrunchDemo,
+  aniversarioClasicoDemo,
+  babyShowerBotanicoDemo,
+  eventoCorporativoDemo,
 ];

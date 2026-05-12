@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import { HashRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useParams } from "react-router-dom";
 import { getDemoByTemplate } from "./lib/getDemoByTemplate.js";
 import { getInvitationBySlug } from "./lib/getInvitationBySlug.js";
 import { getTemplateComponent } from "./lib/templateRegistry.js";
@@ -27,7 +27,7 @@ function InvitationRoute() {
 
 createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/demo/:template" element={<DemoRoute />} />
@@ -35,6 +35,6 @@ createRoot(document.getElementById("root")).render(
         <Route path="/demo" element={<Navigate to="/demo/quince-glam" replace />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );

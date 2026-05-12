@@ -26,15 +26,26 @@ Rutas principales:
 /demo/boda-elegante
 /demo/boda-clasica
 /demo/boda-boho
+/demo/boda-minimal
+/demo/boda-tropical
 /demo/bautismo-delicado
 /demo/bautismo-cielo
 /demo/bautismo-natural
+/demo/bautismo-vintage
+/demo/bautismo-jardin
 /demo/cumple
 /demo/cumple-kids
 /demo/cumple-noche
+/demo/cumple-pool
+/demo/cumple-black-gold
 /demo/recibida-moderna
 /demo/recibida-minimal
 /demo/recibida-bold
+/demo/recibida-tech
+/demo/recibida-brunch
+/demo/aniversario-clasico
+/demo/baby-shower-botanico
+/demo/evento-corporativo
 /i/valentina-15
 ```
 
@@ -85,18 +96,31 @@ Plantillas disponibles:
 boda-elegante
 boda-clasica
 boda-boho
+boda-minimal
+boda-tropical
 quince-glam
 quince-dream
 quince-neon
+quince-editorial
+quince-pastel
 bautismo-delicado
 bautismo-cielo
 bautismo-natural
+bautismo-vintage
+bautismo-jardin
 cumple
 cumple-kids
 cumple-noche
+cumple-pool
+cumple-black-gold
 recibida-moderna
 recibida-minimal
 recibida-bold
+recibida-tech
+recibida-brunch
+aniversario-clasico
+baby-shower-botanico
+evento-corporativo
 ```
 
 El registry vive en `src/lib/templateRegistry.js`. Varias plantillas pueden reutilizar el mismo layout y cambiar el estilo desde configuracion: colores, textos, imagenes, dress code, regalos y RSVP.
@@ -106,11 +130,12 @@ El registry vive en `src/lib/templateRegistry.js`. Varias plantillas pueden reut
 Cada evento tiene varias demos para mostrar opciones al cliente:
 
 ```text
-Boda: elegante, clasica, boho
-15: glam, dream, neon
-Bautismo: delicado, cielo, natural
-Cumple: infantil, kids, noche
-Recibida: moderna, minimal, bold
+Boda: elegante, clasica, boho, minimal, tropical
+15: glam, dream, neon, editorial, pastel
+Bautismo: delicado, cielo, natural, vintage, jardin
+Cumple: infantil, kids, noche, pool, black gold
+Recibida: moderna, minimal, bold, tech, brunch
+Especiales: aniversario clasico, baby shower botanico, evento corporativo
 ```
 
 Para sumar un estilo nuevo, crear una config en `src/data/demos/templateVariants.js` o un archivo dedicado en `src/data/demos/`, agregar el `template` al registry y usar `/demo/nombre-template`.
@@ -219,13 +244,16 @@ Los archivos generados se guardan en `recursos_redes/`, carpeta ignorada por Git
 
 ## Vercel y dominios
 
+La app usa `BrowserRouter` y `vercel.json`, asi que en Vercel funcionan URLs limpias como `/demo/boda-elegante` y `/i/valentina-15` incluso al recargar la pagina.
+
 Para publicar en Vercel:
 
 1. Importar el repo.
 2. Framework: Vite.
 3. Build command: `npm run build`.
 4. Output directory: `dist`.
-5. Configurar dominio o subdominio desde `Settings > Domains`.
+5. Verificar que `vercel.json` este incluido en el deploy.
+6. Configurar dominio o subdominio desde `Settings > Domains`.
 
 Para URLs comerciales se puede usar:
 
@@ -234,3 +262,5 @@ invitacionesweb.com/demo/quince-glam
 invitacionesweb.com/i/valentina-15
 valentina.invitacionesweb.com/i/valentina-15
 ```
+
+Guia operativa completa para clientes contratados: `docs/despliegue-vercel.md`.

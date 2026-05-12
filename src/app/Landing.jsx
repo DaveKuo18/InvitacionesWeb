@@ -35,6 +35,32 @@ const demoContent = demoCards.map((card) => {
 const availableDemos = demoContent.filter((demo) => demo.image);
 const heroDemo = availableDemos[0];
 
+const eventTypeLabels = {
+  boda: "Boda",
+  quince: "15 anos",
+  bautismo: "Bautismo",
+  cumple: "Cumpleanos",
+  recibida: "Recibida",
+  aniversario: "Aniversario",
+  "baby-shower": "Baby shower",
+  evento: "Evento",
+};
+
+const demoCarouselItems = demoInvitations
+  .filter((demo) => demo.images?.hero)
+  .map((demo) => ({
+    name: demo.title,
+    type: eventTypeLabels[demo.eventType] || demo.eyebrow || "Demo",
+    template: demo.template,
+    href: `/demo/${demo.template}`,
+    image: demo.images.hero,
+    imageAlt: demo.images.heroAlt || demo.title,
+    description: demo.intro,
+    palette: [demo.theme?.primary, demo.theme?.secondary, demo.theme?.accent].filter(Boolean),
+  }));
+
+const demoCarouselTrack = [...demoCarouselItems, ...demoCarouselItems];
+
 function scrollToSection(id) {
   document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
@@ -135,6 +161,39 @@ function DemoMockup() {
       <div className="absolute -bottom-5 -left-5 hidden rounded-3xl border border-[var(--color-border)] bg-white p-5 shadow-xl sm:block">
         <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">Listo para enviar</p>
         <p className="mt-1 font-serif text-2xl text-[var(--color-text)]">Link + QR + WhatsApp</p>
+      </div>
+    </div>
+  );
+}
+
+function DemoCarousel() {
+  return (
+    <div className="relative mt-10 overflow-hidden">
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-12 bg-[linear-gradient(90deg,#fff,rgba(255,255,255,0))] sm:w-20" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-[linear-gradient(270deg,#fff,rgba(255,255,255,0))] sm:w-20" />
+      <div className="demo-carousel-track flex w-max gap-5 py-2">
+        {demoCarouselTrack.map((demo, index) => (
+          <article key={`${demo.template}-${index}`} className="w-[82vw] shrink-0 overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-warm)] shadow-sm sm:w-[44vw] xl:w-[23.5vw]">
+            <div className="bg-[linear-gradient(145deg,#f8f3ec,#ffffff)] p-3">
+              <img src={demo.image} alt={demo.imageAlt} className="h-64 w-full rounded-[1.35rem] object-cover shadow-md sm:h-72 xl:h-64" />
+            </div>
+            <div className="p-5">
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">{demo.type}</p>
+                <div className="flex gap-1.5">
+                  {demo.palette.map((color) => (
+                    <span key={color} className="h-4 w-4 rounded-full border border-white shadow-sm" style={{ backgroundColor: color }} />
+                  ))}
+                </div>
+              </div>
+              <h3 className="mt-2 font-serif text-2xl text-[var(--color-text)]">{demo.name}</h3>
+              <p className="mt-3 line-clamp-3 min-h-20 leading-7 text-[var(--color-muted)]">{demo.description}</p>
+              <Link to={demo.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-gold)] px-4 py-3 text-sm font-bold text-white transition hover:border-[var(--color-gold-dark)] hover:bg-[var(--color-gold-dark)]">
+                Ver demo <ArrowRight size={16} />
+              </Link>
+            </div>
+          </article>
+        ))}
       </div>
     </div>
   );
@@ -248,23 +307,7 @@ export function Landing() {
               <MessageCircle size={18} /> Consultar por WhatsApp
             </PrimaryButton>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-            {demoContent.map((demo) => (
-              <article key={demo.template} className="overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-warm)] shadow-sm">
-                <div className="bg-[linear-gradient(145deg,#f8f3ec,#ffffff)] p-3">
-                  <img src={demo.image} alt={demo.imageAlt} className="h-64 w-full rounded-2xl object-cover shadow-md md:h-72 xl:h-56" />
-                </div>
-                <div className="p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">{demo.type}</p>
-                  <h3 className="mt-2 font-serif text-2xl text-[var(--color-text)]">{demo.name}</h3>
-                  <p className="mt-3 min-h-20 leading-7 text-[var(--color-muted)]">{demo.description}</p>
-                  <Link to={demo.href} target="_blank" rel="noreferrer" className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-gold)] px-4 py-3 text-sm font-bold text-white transition hover:border-[var(--color-gold-dark)] hover:bg-[var(--color-gold-dark)]">
-                    Ver demo <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+          <DemoCarousel />
         </div>
       </section>
 

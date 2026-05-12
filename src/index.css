@@ -44,6 +44,30 @@ body {
   background: var(--color-bg);
 }
 
+.demo-carousel-track {
+  animation: demo-carousel-scroll 72s linear infinite;
+}
+
+.demo-carousel-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes demo-carousel-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .demo-carousel-track {
+    animation: none;
+  }
+}
+
 button,
 input,
 select,
