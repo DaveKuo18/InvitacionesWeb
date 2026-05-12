@@ -10,6 +10,12 @@ npm run dev
 npm run build
 ```
 
+Para configurar el WhatsApp comercial de la landing, copiar `.env.example` a `.env.local` y cambiar:
+
+```text
+VITE_CONTACT_WHATSAPP=5491112345678
+```
+
 Rutas principales:
 
 ```text
