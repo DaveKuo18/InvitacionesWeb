@@ -15,10 +15,20 @@ Rutas principales:
 ```text
 /
 /demo/quince-glam
+/demo/quince-dream
+/demo/quince-neon
 /demo/boda-elegante
+/demo/boda-clasica
+/demo/boda-boho
 /demo/bautismo-delicado
+/demo/bautismo-cielo
+/demo/bautismo-natural
 /demo/cumple-infantil
+/demo/cumple-kids
+/demo/cumple-noche
 /demo/recibida-moderna
+/demo/recibida-minimal
+/demo/recibida-bold
 /i/valentina-15
 ```
 
@@ -39,7 +49,7 @@ src/
   types/
 ```
 
-Las carpetas antiguas (`boda`, `15s`, `cumple`, etc.) quedan como referencia de las demos originales. La app nueva se sirve desde la raiz.
+La app se sirve desde la raiz. Las demos viven como datos en `src/data/demos`, las invitaciones reales en `src/data/invitations` y los componentes visuales reutilizables en `src/components`.
 
 ## Agregar una nueva demo
 
@@ -67,13 +77,37 @@ Plantillas disponibles:
 
 ```text
 boda-elegante
+boda-clasica
+boda-boho
 quince-glam
+quince-dream
+quince-neon
 bautismo-delicado
+bautismo-cielo
+bautismo-natural
 cumple-infantil
+cumple-kids
+cumple-noche
 recibida-moderna
+recibida-minimal
+recibida-bold
 ```
 
-El registry vive en `src/lib/templateRegistry.js`.
+El registry vive en `src/lib/templateRegistry.js`. Varias plantillas pueden reutilizar el mismo layout y cambiar el estilo desde configuracion: colores, textos, imagenes, dress code, regalos y RSVP.
+
+## Estilos comerciales por evento
+
+Cada evento tiene varias demos para mostrar opciones al cliente:
+
+```text
+Boda: elegante, clasica, boho
+15: glam, dream, neon
+Bautismo: delicado, cielo, natural
+Cumple: infantil, kids, noche
+Recibida: moderna, minimal, bold
+```
+
+Para sumar un estilo nuevo, crear una config en `src/data/demos/templateVariants.js` o un archivo dedicado en `src/data/demos/`, agregar el `template` al registry y usar `/demo/nombre-template`.
 
 ## Activar o desactivar modulos
 
@@ -174,6 +208,8 @@ node scripts/generate-demo-assets.mjs --url http://localhost:5173/i/valentina-15
 ```
 
 Sin parametros, el script recorre demos y cliente de ejemplo.
+
+Los archivos generados se guardan en `recursos_redes/`, carpeta ignorada por Git para no subir assets pesados.
 
 ## Vercel y dominios
 

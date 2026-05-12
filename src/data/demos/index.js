@@ -3,6 +3,7 @@ import { quinceGlamDemo } from "./quince-glam.js";
 import { bautismoDelicadoDemo } from "./bautismo-delicado.js";
 import { cumpleInfantilDemo } from "./cumple-infantil.js";
 import { recibidaModernaDemo } from "./recibida-moderna.js";
+import { templateVariantDemos } from "./templateVariants.js";
 
 export const demoInvitations = [
   bodaEleganteDemo,
@@ -10,4 +11,5 @@ export const demoInvitations = [
   bautismoDelicadoDemo,
   cumpleInfantilDemo,
   recibidaModernaDemo,
+  ...templateVariantDemos,
 ];

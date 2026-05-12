@@ -1,8 +1,0 @@
-<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="128" height="128" rx="28" fill="#F7FAFC"/>
-  <circle cx="64" cy="57" r="39" stroke="#4E7CF6" stroke-width="5"/>
-  <path d="M31 55L64 82L97 55V91C97 96 93 100 88 100H40C35 100 31 96 31 91V55Z" fill="#E8EEFF" stroke="#4E7CF6" stroke-width="5" stroke-linejoin="round"/>
-  <text x="64" y="68" text-anchor="middle" font-family="Georgia, serif" font-size="28" fill="#213E8C">IW</text>
-  <path d="M92 30L97 42L110 43L100 52L103 65L92 58L81 65L84 52L74 43L87 42L92 30Z" fill="#FFD166"/>
-  <circle cx="38" cy="35" r="8" fill="#23B6A6"/>
-</svg>

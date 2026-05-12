@@ -4,7 +4,7 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 
 export default [
-  { ignores: ["dist", "recursos_redes", "**/node_modules", "15s", "aniversario", "baby-shower", "bautismo", "boda", "cumple", "generica"] },
+  { ignores: ["dist", "recursos_redes", "**/node_modules"] },
   {
     files: ["**/*.{js,jsx}"],
     languageOptions: {

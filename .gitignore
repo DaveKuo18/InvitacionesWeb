@@ -2,9 +2,5 @@ node_modules/
 dist/
 .env
 .env.local
-recursos_redes/**/frames/
-recursos_redes/.edge-capture-profile/
-recursos_redes/**/*.mp4
+recursos_redes/
 npm-debug.log*
-boda/.git
-boda/

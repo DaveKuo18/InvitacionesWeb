@@ -14,10 +14,20 @@ const videoSuffix = "scroll_reel_30fps_15s";
 
 const defaultPages = [
   { slug: "quince-glam", title: "Quince glam", url: "http://127.0.0.1:5173/demo/quince-glam" },
+  { slug: "quince-dream", title: "Quince dream", url: "http://127.0.0.1:5173/demo/quince-dream" },
+  { slug: "quince-neon", title: "Quince neon", url: "http://127.0.0.1:5173/demo/quince-neon" },
   { slug: "boda-elegante", title: "Boda elegante", url: "http://127.0.0.1:5173/demo/boda-elegante" },
+  { slug: "boda-clasica", title: "Boda clasica", url: "http://127.0.0.1:5173/demo/boda-clasica" },
+  { slug: "boda-boho", title: "Boda boho", url: "http://127.0.0.1:5173/demo/boda-boho" },
   { slug: "bautismo-delicado", title: "Bautismo delicado", url: "http://127.0.0.1:5173/demo/bautismo-delicado" },
+  { slug: "bautismo-cielo", title: "Bautismo cielo", url: "http://127.0.0.1:5173/demo/bautismo-cielo" },
+  { slug: "bautismo-natural", title: "Bautismo natural", url: "http://127.0.0.1:5173/demo/bautismo-natural" },
   { slug: "cumple-infantil", title: "Cumple infantil", url: "http://127.0.0.1:5173/demo/cumple-infantil" },
+  { slug: "cumple-kids", title: "Cumple kids", url: "http://127.0.0.1:5173/demo/cumple-kids" },
+  { slug: "cumple-noche", title: "Cumple noche", url: "http://127.0.0.1:5173/demo/cumple-noche" },
   { slug: "recibida-moderna", title: "Recibida moderna", url: "http://127.0.0.1:5173/demo/recibida-moderna" },
+  { slug: "recibida-minimal", title: "Recibida minimal", url: "http://127.0.0.1:5173/demo/recibida-minimal" },
+  { slug: "recibida-bold", title: "Recibida bold", url: "http://127.0.0.1:5173/demo/recibida-bold" },
   { slug: "valentina-15", title: "Valentina 15", url: "http://127.0.0.1:5173/i/valentina-15" },
 ];
 

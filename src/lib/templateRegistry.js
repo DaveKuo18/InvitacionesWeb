@@ -6,10 +6,20 @@ import { RecibidaModerna } from "../templates/recibida/RecibidaModerna.jsx";
 
 export const templateRegistry = {
   "boda-elegante": BodaElegante,
+  "boda-clasica": BodaElegante,
+  "boda-boho": BodaElegante,
   "quince-glam": QuinceGlam,
+  "quince-dream": QuinceGlam,
+  "quince-neon": QuinceGlam,
   "bautismo-delicado": BautismoDelicado,
+  "bautismo-cielo": BautismoDelicado,
+  "bautismo-natural": BautismoDelicado,
   "cumple-infantil": CumpleInfantil,
+  "cumple-kids": CumpleInfantil,
+  "cumple-noche": CumpleInfantil,
   "recibida-moderna": RecibidaModerna,
+  "recibida-minimal": RecibidaModerna,
+  "recibida-bold": RecibidaModerna,
 };
 
 export function getTemplateComponent(template) {
