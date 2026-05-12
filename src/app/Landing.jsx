@@ -35,6 +35,10 @@ const demoContent = demoCards.map((card) => {
 const availableDemos = demoContent.filter((demo) => demo.image);
 const heroDemo = availableDemos[0];
 
+function scrollToSection(id) {
+  document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 function SectionHeading({ eyebrow, title, text, align = "left" }) {
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
@@ -59,10 +63,32 @@ function PrimaryButton({ href, children, className = "" }) {
 }
 
 function SecondaryButton({ href, children, className = "" }) {
+  const handleClick = (event) => {
+    if (href.startsWith("#")) {
+      event.preventDefault();
+      scrollToSection(href);
+    }
+  };
+
   return (
     <a
       href={href}
+      onClick={handleClick}
       className={`inline-flex items-center justify-center gap-3 rounded-full border border-[var(--color-border)] bg-white px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-text)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--color-gold-light)] ${className}`}
+    >
+      {children}
+    </a>
+  );
+}
+
+function ScrollLink({ href, children }) {
+  return (
+    <a
+      href={href}
+      onClick={(event) => {
+        event.preventDefault();
+        scrollToSection(href);
+      }}
     >
       {children}
     </a>
@@ -122,14 +148,16 @@ export function Landing() {
       <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[rgba(248,243,236,0.88)] backdrop-blur">
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
           <Link to="/" className="flex items-center gap-3">
-            <img src={brand.logo} alt={brand.name} className="h-10 w-10 rounded-xl" />
+            <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-warm)] shadow-sm">
+              <img src={brand.logo} alt={brand.name} className="h-9 w-9" />
+            </span>
             <span className="font-serif text-xl text-[var(--color-text)] sm:text-2xl">{brand.name}</span>
           </Link>
           <div className="hidden items-center gap-6 text-sm font-semibold text-[var(--color-muted)] lg:flex">
-            <a href="#incluye">Incluye</a>
-            <a href="#demos">Demos</a>
-            <a href="#planes">Planes</a>
-            <a href="#faq">FAQ</a>
+            <ScrollLink href="#incluye">Incluye</ScrollLink>
+            <ScrollLink href="#demos">Demos</ScrollLink>
+            <ScrollLink href="#planes">Planes</ScrollLink>
+            <ScrollLink href="#faq">FAQ</ScrollLink>
           </div>
           <a href={consultUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-text)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[var(--color-gold-dark)]">
             <MessageCircle size={17} /> <span className="hidden sm:inline">WhatsApp</span>
@@ -384,7 +412,9 @@ export function Landing() {
       <footer className="border-t border-[var(--color-border)] bg-white px-5 py-8">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
           <div className="flex items-center gap-4">
-            <img src={brand.logo} alt={brand.name} className="h-12 w-12 rounded-2xl" />
+            <span className="flex h-14 w-14 items-center justify-center rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-warm)]">
+              <img src={brand.logo} alt={brand.name} className="h-11 w-11" />
+            </span>
             <div>
               <p className="font-serif text-2xl text-[var(--color-text)]">{brand.name}</p>
               <p className="mt-1 text-sm text-[var(--color-muted)]">Invitaciones digitales en formato web para eventos especiales.</p>
