@@ -1,226 +1,390 @@
-import { ArrowRight, CalendarCheck, Check, ExternalLink, MessageCircle, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarClock,
+  Check,
+  ChevronRight,
+  Gift,
+  Heart,
+  HelpCircle,
+  MapPin,
+  MessageCircle,
+  QrCode,
+  Shirt,
+  Sparkles,
+  Star,
+  Timer,
+  Users,
+  X,
+} from "lucide-react";
 import { Link } from "react-router-dom";
 import { demoInvitations } from "../data/demos/index.js";
+import { brand, demoCards, eventTypes, extras, faqs, includes, plans, steps, whatsappUrl } from "../data/site.js";
 
-const CONTACT_WHATSAPP = import.meta.env.VITE_CONTACT_WHATSAPP || "5491100000000";
+const includeIcons = [Timer, MapPin, MessageCircle, Heart, Gift, Shirt, QrCode, Users];
 
-const featuredDemos = ["quince-glam", "boda-clasica", "bautismo-cielo", "cumple-noche", "recibida-bold"]
-  .map((template) => demoInvitations.find((demo) => demo.template === template))
-  .filter(Boolean);
+const demoContent = demoCards.map((card) => {
+  const demo = demoInvitations.find((item) => item.template === card.template);
+  return {
+    ...card,
+    href: `/demo/${card.template}`,
+    image: demo?.images?.hero,
+    imageAlt: demo?.images?.heroAlt || card.name,
+  };
+});
 
-const plans = [
-  {
-    name: "Estandar",
-    price: "U$D40",
-    tone: "Para invitaciones simples y rapidas.",
-    features: ["Plantilla personalizada", "Datos del evento", "Ubicacion con mapa", "Confirmacion por WhatsApp", "Link listo para compartir"],
-  },
-  {
-    name: "Premium",
-    price: "U$D70",
-    tone: "Para eventos con mas detalle visual.",
-    featured: true,
-    features: ["Todo lo del plan estandar", "Galeria de fotos", "Cuenta regresiva", "Dress code y regalos", "Formulario RSVP opcional"],
-  },
-  {
-    name: "Deluxe",
-    price: "U$D100",
-    tone: "Para una experiencia completa.",
-    features: ["Todo lo del plan premium", "RSVP conectado a Google Sheets", "Mas secciones personalizadas", "Ajustes visuales avanzados", "Preparacion para dominio propio"],
-  },
-];
+const availableDemos = demoContent.filter((demo) => demo.image);
+const heroDemo = availableDemos[0];
 
-const eventTypes = ["Bodas", "15 anos", "Bautismos", "Cumpleanos", "Recibidas", "Baby showers"];
-
-function whatsappUrl(message) {
-  return `https://wa.me/${CONTACT_WHATSAPP}?text=${encodeURIComponent(message)}`;
+function SectionHeading({ eyebrow, title, text, align = "left" }) {
+  return (
+    <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
+      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-gold-dark)]">{eyebrow}</p>
+      <h2 className="mt-3 font-serif text-4xl leading-tight text-[var(--color-text)] sm:text-5xl">{title}</h2>
+      {text && <p className="mt-4 text-base leading-8 text-[var(--color-muted)] sm:text-lg">{text}</p>}
+    </div>
+  );
 }
 
-function ReservationForm() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const message = [
-      "Hola, quiero reservar una invitacion web.",
-      `Nombre: ${formData.get("nombre") || ""}`,
-      `Evento: ${formData.get("evento") || ""}`,
-      `Fecha: ${formData.get("fecha") || ""}`,
-      `Plan: ${formData.get("plan") || ""}`,
-      `Mensaje: ${formData.get("mensaje") || ""}`,
-    ].join("\n");
-    window.open(whatsappUrl(message), "_blank", "noopener,noreferrer");
-  };
-
+function PrimaryButton({ href, children, className = "" }) {
   return (
-    <form onSubmit={handleSubmit} className="grid gap-4 rounded-lg border border-[#D8E0EA] bg-white p-5 shadow-sm sm:p-6">
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-semibold text-[#263241]">
-          Nombre
-          <input name="nombre" required className="rounded-md border border-[#C9D4E2] px-4 py-3 font-normal outline-none focus:border-[#1F6FEB]" />
-        </label>
-        <label className="grid gap-2 text-sm font-semibold text-[#263241]">
-          Tipo de evento
-          <select name="evento" required className="rounded-md border border-[#C9D4E2] bg-white px-4 py-3 font-normal outline-none focus:border-[#1F6FEB]">
-            <option value="">Elegir</option>
-            {eventTypes.map((eventType) => <option key={eventType} value={eventType}>{eventType}</option>)}
-          </select>
-        </label>
+    <a
+      href={href}
+      target={href.startsWith("http") ? "_blank" : undefined}
+      rel={href.startsWith("http") ? "noreferrer" : undefined}
+      className={`inline-flex items-center justify-center gap-3 rounded-full bg-[var(--color-gold)] px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[0_16px_34px_rgba(173,128,60,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--color-gold-dark)] ${className}`}
+    >
+      {children}
+    </a>
+  );
+}
+
+function SecondaryButton({ href, children, className = "" }) {
+  return (
+    <a
+      href={href}
+      className={`inline-flex items-center justify-center gap-3 rounded-full border border-[var(--color-border)] bg-white px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-text)] shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--color-gold-light)] ${className}`}
+    >
+      {children}
+    </a>
+  );
+}
+
+function DemoMockup() {
+  return (
+    <div className="relative mx-auto max-w-[430px]">
+      <div className="absolute -inset-8 rounded-full bg-[radial-gradient(circle,rgba(197,155,87,0.22),rgba(248,243,236,0)_68%)]" />
+      <div className="relative rounded-[2.4rem] border border-[var(--color-border)] bg-[linear-gradient(145deg,#fff,#f4e9d8)] p-3 shadow-[0_28px_80px_rgba(63,59,56,0.18)]">
+        <div className="overflow-hidden rounded-[1.9rem] bg-white">
+          <div className="relative h-[500px]">
+            <img src={heroDemo?.image} alt={heroDemo?.imageAlt} className="h-full w-full object-cover" />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(63,59,56,0.08),rgba(63,59,56,0.62))]" />
+            <div className="absolute left-5 right-5 top-5 flex items-center justify-between rounded-full border border-white/35 bg-white/20 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white backdrop-blur">
+              <span>Demo web</span>
+              <Sparkles size={15} />
+            </div>
+            <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+              <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#F4DFC0]">{heroDemo?.type}</p>
+              <h3 className="mt-2 font-serif text-4xl">{heroDemo?.name}</h3>
+              <p className="mt-3 leading-7 text-white/86">Cuenta regresiva, ubicacion, fotos, regalos y RSVP en una experiencia lista para compartir.</p>
+              <Link to={heroDemo?.href || "/demo/quince-glam"} className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-3 text-sm font-bold text-[var(--color-text)]">
+                Ver demo <ChevronRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="grid gap-2 text-sm font-semibold text-[#263241]">
-          Fecha aproximada
-          <input name="fecha" type="date" className="rounded-md border border-[#C9D4E2] px-4 py-3 font-normal outline-none focus:border-[#1F6FEB]" />
-        </label>
-        <label className="grid gap-2 text-sm font-semibold text-[#263241]">
-          Plan
-          <select name="plan" required className="rounded-md border border-[#C9D4E2] bg-white px-4 py-3 font-normal outline-none focus:border-[#1F6FEB]">
-            <option value="">Elegir</option>
-            {plans.map((plan) => <option key={plan.name} value={plan.name}>{plan.name} - {plan.price}</option>)}
-          </select>
-        </label>
+      <div className="absolute -bottom-5 -left-5 hidden rounded-3xl border border-[var(--color-border)] bg-white p-5 shadow-xl sm:block">
+        <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">Listo para enviar</p>
+        <p className="mt-1 font-serif text-2xl text-[var(--color-text)]">Link + QR + WhatsApp</p>
       </div>
-      <label className="grid gap-2 text-sm font-semibold text-[#263241]">
-        Mensaje
-        <textarea name="mensaje" rows={4} className="rounded-md border border-[#C9D4E2] px-4 py-3 font-normal outline-none focus:border-[#1F6FEB]" placeholder="Contame si ya tenes fotos, colores, salon o una demo elegida." />
-      </label>
-      <button type="submit" className="inline-flex items-center justify-center gap-3 rounded-md bg-[#123B66] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-[#0B2A4A]">
-        <MessageCircle size={18} /> Reservar por WhatsApp
-      </button>
-    </form>
+    </div>
   );
 }
 
 export function Landing() {
+  const consultUrl = whatsappUrl();
+
   return (
-    <main className="min-h-screen bg-[#F6F8FB] text-[#182230]">
-      <header className="sticky top-0 z-40 border-b border-[#E3E8EF] bg-white/90 backdrop-blur">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+    <main className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)]">
+      <header className="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[rgba(248,243,236,0.88)] backdrop-blur">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-5 py-4">
           <Link to="/" className="flex items-center gap-3">
-            <img src="/brand/invitaciones-web-logo.svg" alt="" className="h-9 w-9" />
-            <span className="font-serif text-2xl text-[#123B66]">Invitaciones Web</span>
+            <img src={brand.logo} alt={brand.name} className="h-10 w-10 rounded-xl" />
+            <span className="font-serif text-xl text-[var(--color-text)] sm:text-2xl">{brand.name}</span>
           </Link>
-          <div className="hidden items-center gap-6 text-sm font-semibold text-[#536173] md:flex">
-            <a href="#ejemplos">Ejemplos</a>
+          <div className="hidden items-center gap-6 text-sm font-semibold text-[var(--color-muted)] lg:flex">
+            <a href="#incluye">Incluye</a>
+            <a href="#demos">Demos</a>
             <a href="#planes">Planes</a>
-            <a href="#reservar">Reservar</a>
+            <a href="#faq">FAQ</a>
           </div>
-          <a href={whatsappUrl("Hola, quiero consultar por una invitacion web.")} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-[#123B66] px-4 py-3 text-sm font-bold text-white">
-            <MessageCircle size={17} /> Consultar
+          <a href={consultUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-text)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[var(--color-gold-dark)]">
+            <MessageCircle size={17} /> <span className="hidden sm:inline">WhatsApp</span>
           </a>
         </nav>
       </header>
 
-      <section className="mx-auto grid max-w-6xl items-center gap-12 px-5 py-14 md:grid-cols-[1.02fr_0.98fr] md:py-20">
-        <div>
-          <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#CFE0F3] bg-white px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[#1F6FEB]">
-            <Sparkles size={15} /> Invitacionesweb.ar
-          </p>
-          <h1 className="font-serif text-5xl leading-tight text-[#122033] sm:text-7xl">
-            Invitaciones digitales lindas, claras y listas para compartir
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#5F6C7B]">
-            Armo tu invitacion web con fotos, datos del evento, mapa, cuenta regresiva y confirmacion de asistencia. Ideal para enviar por WhatsApp, Instagram o QR.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#reservar" className="inline-flex items-center gap-3 rounded-md bg-[#123B66] px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white shadow-lg transition hover:-translate-y-0.5">
-              Reservar fecha <ArrowRight size={18} />
-            </a>
-            <a href="#ejemplos" className="inline-flex items-center gap-3 rounded-md border border-[#C9D4E2] bg-white px-6 py-4 text-sm font-bold uppercase tracking-[0.14em] text-[#123B66] shadow-sm">
-              Ver ejemplos
-            </a>
-          </div>
-          <div className="mt-8 grid max-w-xl grid-cols-3 gap-3 text-sm text-[#536173]">
-            <div className="rounded-md border border-[#E3E8EF] bg-white p-4"><strong className="block text-2xl text-[#123B66]">24/7</strong> link activo</div>
-            <div className="rounded-md border border-[#E3E8EF] bg-white p-4"><strong className="block text-2xl text-[#123B66]">3</strong> planes</div>
-            <div className="rounded-md border border-[#E3E8EF] bg-white p-4"><strong className="block text-2xl text-[#123B66]">RSVP</strong> incluido</div>
-          </div>
-        </div>
-
-        <div className="relative">
-          <img src={featuredDemos[0]?.images.hero} alt="Vista previa de invitacion digital" className="aspect-[4/5] w-full rounded-lg object-cover shadow-2xl" />
-          <div className="absolute bottom-5 left-5 right-5 rounded-lg bg-white/94 p-5 shadow-xl backdrop-blur">
-            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#1F6FEB]">Preview rapida</p>
-            <h2 className="mt-2 font-serif text-3xl text-[#122033]">{featuredDemos[0]?.title}</h2>
-            <p className="mt-2 text-sm leading-6 text-[#5F6C7B]">Tu invitacion puede verse romantica, moderna, infantil, minimalista o bien fiesta.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="ejemplos" className="border-y border-[#E3E8EF] bg-white py-16">
-        <div className="mx-auto max-w-6xl px-5">
-          <div className="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
-            <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1F6FEB]">Ejemplos</p>
-              <h2 className="mt-3 font-serif text-4xl text-[#122033] sm:text-5xl">Previsualizaciones para elegir estilo</h2>
+      <section className="relative overflow-hidden">
+        <div className="absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(217,196,161,0.42),rgba(248,243,236,0)_70%)]" />
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:grid-cols-[1.02fr_0.98fr] lg:py-20">
+          <div>
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white/75 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-[var(--color-gold-dark)] shadow-sm">
+              <Sparkles size={15} /> {brand.instagram}
+            </p>
+            <h1 className="max-w-4xl font-serif text-5xl leading-tight text-[var(--color-text)] sm:text-6xl lg:text-7xl">
+              Invitaciones web para eventos inolvidables
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--color-muted)]">
+              Creamos la pagina de tu evento con cuenta regresiva, ubicacion, fotos, regalos y confirmacion de asistencia en un solo link.
+            </p>
+            <p className="mt-4 max-w-2xl text-base font-semibold leading-7 text-[var(--color-text)]">
+              Bodas, 15 anos, bautismos, cumpleanos, recibidas y eventos especiales.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <SecondaryButton href="#demos" className="w-full sm:w-auto">
+                Ver demos <ArrowRight size={18} />
+              </SecondaryButton>
+              <PrimaryButton href={consultUrl} className="w-full sm:w-auto">
+                <MessageCircle size={18} /> Consultar por WhatsApp
+              </PrimaryButton>
             </div>
-            <Link to="/demo/quince-glam" className="inline-flex items-center gap-2 font-bold text-[#123B66]">Abrir una demo completa <ExternalLink size={17} /></Link>
+            <div className="mt-9 grid max-w-2xl grid-cols-3 gap-3">
+              {["Un solo link", "QR incluido", "Mobile first"].map((item) => (
+                <div key={item} className="rounded-3xl border border-[var(--color-border)] bg-white/70 p-4 text-center text-sm font-bold text-[var(--color-text)] shadow-sm">
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {featuredDemos.map((demo) => (
-              <Link key={demo.template} to={`/demo/${demo.template}`} className="group overflow-hidden rounded-lg border border-[#E3E8EF] bg-[#F8FAFC] shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
-                <img src={demo.images.hero} alt={demo.title} className="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
-                <span className="block p-4">
-                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#6B7788]">{demo.eyebrow}</span>
-                  <span className="mt-1 block font-serif text-2xl text-[#122033]">{demo.title}</span>
-                  <span className="mt-3 inline-flex items-center gap-2 text-sm font-bold text-[#1F6FEB]">Ver demo <ArrowRight size={15} /></span>
-                </span>
-              </Link>
-            ))}
+          <DemoMockup />
+        </div>
+      </section>
+
+      <section id="incluye" className="bg-[var(--color-surface-warm)] py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <SectionHeading
+            eyebrow="Que incluye"
+            title="Todo lo que tus invitados necesitan"
+            text="Todo lo que tus invitados necesitan, reunido en una experiencia digital simple, elegante y facil de compartir."
+          />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {includes.map((item, index) => {
+              const Icon = includeIcons[index] || Star;
+              return (
+                <article key={item.title} className="rounded-3xl border border-[var(--color-border)] bg-white p-6 shadow-sm">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-bg-soft)] text-[var(--color-gold-dark)]">
+                    <Icon size={22} />
+                  </span>
+                  <h3 className="mt-5 font-serif text-2xl text-[var(--color-text)]">{item.title}</h3>
+                  <p className="mt-3 leading-7 text-[var(--color-muted)]">{item.text}</p>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section id="planes" className="mx-auto max-w-6xl px-5 py-16">
-        <div className="mb-8 max-w-2xl">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#1F6FEB]">Planes</p>
-          <h2 className="mt-3 font-serif text-4xl text-[#122033] sm:text-5xl">Opciones simples para cada tipo de evento</h2>
-        </div>
-        <div className="grid gap-5 lg:grid-cols-3">
-          {plans.map((plan) => (
-            <article key={plan.name} className={`rounded-lg border bg-white p-6 shadow-sm ${plan.featured ? "border-[#1F6FEB] ring-2 ring-[#D7E7FF]" : "border-[#E3E8EF]"}`}>
-              {plan.featured && <p className="mb-4 w-fit rounded-full bg-[#E8F1FF] px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-[#1F6FEB]">Mas elegido</p>}
-              <h3 className="font-serif text-4xl text-[#122033]">{plan.name}</h3>
-              <p className="mt-3 text-5xl font-bold text-[#123B66]">{plan.price}</p>
-              <p className="mt-3 leading-7 text-[#5F6C7B]">{plan.tone}</p>
-              <ul className="mt-6 grid gap-3">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex gap-3 text-[#334155]"><Check className="mt-0.5 shrink-0 text-[#1F6FEB]" size={18} /> {feature}</li>
-                ))}
-              </ul>
-              <a href={whatsappUrl(`Hola, quiero reservar el plan ${plan.name} (${plan.price}) para una invitacion web.`)} target="_blank" rel="noreferrer" className="mt-7 inline-flex w-full items-center justify-center gap-3 rounded-md bg-[#123B66] px-5 py-4 text-sm font-bold uppercase tracking-[0.14em] text-white">
-                Elegir plan
-              </a>
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:py-20">
+        <SectionHeading eyebrow="Tipos de eventos" title="Una web para cada celebracion" text="Adaptamos tono, imagenes, secciones y recorrido segun el tipo de evento que estas organizando." />
+        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {eventTypes.map((event) => (
+            <article key={event.title} className="group rounded-3xl border border-[var(--color-border)] bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="font-serif text-3xl text-[var(--color-text)]">{event.title}</h3>
+                <Heart className="mt-1 shrink-0 text-[var(--color-gold)]" size={22} />
+              </div>
+              <p className="mt-4 leading-7 text-[var(--color-muted)]">{event.text}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="bg-[#122033] py-16 text-white">
-        <div className="mx-auto grid max-w-6xl gap-8 px-5 md:grid-cols-4">
-          {["Elegis plan y estilo", "Me pasas datos y fotos", "Revisas la invitacion", "Compartis el link"].map((step, index) => (
-            <div key={step} className="rounded-lg border border-white/15 bg-white/7 p-5">
-              <span className="text-sm font-bold text-[#9CC7FF]">0{index + 1}</span>
-              <h3 className="mt-3 font-serif text-2xl">{step}</h3>
-            </div>
+      <section id="demos" className="border-y border-[var(--color-border)] bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
+            <SectionHeading eyebrow="Demos" title="Explora estilos reales antes de elegir" text="Cada demo muestra como puede verse una invitacion completa, con secciones listas para adaptar a tu evento." />
+            <PrimaryButton href={consultUrl}>
+              <MessageCircle size={18} /> Consultar por WhatsApp
+            </PrimaryButton>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+            {demoContent.map((demo) => (
+              <article key={demo.template} className="overflow-hidden rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-warm)] shadow-sm">
+                <div className="bg-[linear-gradient(145deg,#f8f3ec,#ffffff)] p-3">
+                  <img src={demo.image} alt={demo.imageAlt} className="h-64 w-full rounded-2xl object-cover shadow-md md:h-72 xl:h-56" />
+                </div>
+                <div className="p-5">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">{demo.type}</p>
+                  <h3 className="mt-2 font-serif text-2xl text-[var(--color-text)]">{demo.name}</h3>
+                  <p className="mt-3 min-h-20 leading-7 text-[var(--color-muted)]">{demo.description}</p>
+                  <Link to={demo.href} className="mt-5 inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-white px-4 py-3 text-sm font-bold text-[var(--color-text)] transition hover:border-[var(--color-gold)]">
+                    Ver demo <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="planes" className="mx-auto max-w-7xl px-5 py-16 sm:py-20">
+        <SectionHeading eyebrow="Planes" title="Elegi el nivel de detalle que necesita tu evento" text="Propuestas claras para resolver desde una invitacion simple hasta una experiencia web a medida." align="center" />
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          {plans.map((plan) => (
+            <article key={plan.name} className={`relative rounded-[2rem] border bg-white p-6 shadow-sm ${plan.recommended ? "border-[var(--color-gold)] shadow-[0_24px_70px_rgba(197,155,87,0.22)] lg:-mt-4" : "border-[var(--color-border)]"}`}>
+              {plan.recommended && (
+                <p className="mb-5 inline-flex rounded-full bg-[var(--color-gold)] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-white">Recomendado</p>
+              )}
+              <h3 className="font-serif text-4xl text-[var(--color-text)]">{plan.name}</h3>
+              <p className="mt-3 text-4xl font-bold text-[var(--color-gold-dark)]">{plan.price}</p>
+              <p className="mt-3 leading-7 text-[var(--color-muted)]">{plan.subtitle}</p>
+              <ul className="mt-6 grid gap-3">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex gap-3 leading-6 text-[var(--color-text)]">
+                    <Check className="mt-0.5 shrink-0 text-[var(--color-success)]" size={18} /> {feature}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 rounded-2xl bg-[var(--color-surface-warm)] p-4">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-[var(--color-gold-dark)]">Ideal para</p>
+                <p className="mt-2 leading-7 text-[var(--color-muted)]">{plan.idealFor}</p>
+              </div>
+              <PrimaryButton href={whatsappUrl(`Hola, quiero consultar por el plan ${plan.name} para una invitacion web.`)} className="mt-6 w-full">
+                {plan.cta}
+              </PrimaryButton>
+            </article>
           ))}
         </div>
-      </section>
-
-      <section id="reservar" className="mx-auto grid max-w-6xl gap-10 px-5 py-16 md:grid-cols-[0.82fr_1.18fr]">
-        <div>
-          <p className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-[#1F6FEB]"><CalendarCheck size={17} /> Reservas</p>
-          <h2 className="mt-3 font-serif text-4xl text-[#122033] sm:text-5xl">Contame tu evento y armamos tu invitacion</h2>
-          <p className="mt-5 leading-8 text-[#5F6C7B]">
-            El formulario abre WhatsApp con el mensaje preparado para que la consulta sea rapida. Despues coordinamos fotos, textos, colores, demo elegida y fecha de entrega.
-          </p>
+        <p className="mx-auto mt-7 max-w-3xl text-center leading-7 text-[var(--color-muted)]">
+          Los precios pueden variar segun el nivel de personalizacion, urgencia y funcionalidades adicionales.
+        </p>
+        <div className="mt-10 rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface-warm)] p-6">
+          <div className="flex flex-col justify-between gap-4 md:flex-row md:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-gold-dark)]">Extras</p>
+              <h3 className="mt-2 font-serif text-3xl text-[var(--color-text)]">Funcionalidades adicionales</h3>
+            </div>
+            <PrimaryButton href={whatsappUrl("Hola, quiero consultar extras para una invitacion web.")}>
+              Consultar extras
+            </PrimaryButton>
+          </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {extras.map((extra) => (
+              <span key={extra} className="rounded-full border border-[var(--color-border)] bg-white px-4 py-2 text-sm font-semibold text-[var(--color-text)]">
+                {extra} · consultar
+              </span>
+            ))}
+          </div>
         </div>
-        <ReservationForm />
       </section>
 
-      <footer className="border-t border-[#E3E8EF] bg-white px-5 py-8">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-4 text-sm text-[#5F6C7B] md:flex-row md:items-center">
-          <p><strong className="text-[#123B66]">Invitaciones Web</strong> · invitacionesweb.ar</p>
-          <a href={whatsappUrl("Hola, quiero consultar disponibilidad para una invitacion web.")} target="_blank" rel="noreferrer" className="font-bold text-[#123B66]">Consultar disponibilidad</a>
+      <section className="bg-[var(--color-text)] py-16 text-white sm:py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-champagne)]">Como funciona</p>
+            <h2 className="mt-3 font-serif text-4xl leading-tight text-white sm:text-5xl">Un proceso simple de punta a punta</h2>
+            <p className="mt-4 text-base leading-8 text-white/76 sm:text-lg">Un proceso simple para que tengas tu invitacion lista sin complicaciones.</p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-5">
+            {steps.map((step, index) => (
+              <article key={step} className="rounded-3xl border border-white/15 bg-white/8 p-5">
+                <span className="text-sm font-bold text-[var(--color-champagne)]">0{index + 1}</span>
+                <h3 className="mt-4 font-serif text-2xl leading-tight">{step}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:py-20">
+        <SectionHeading eyebrow="Comparacion" title="Por que elegir una invitacion web?" text="Una web permite ordenar la informacion, actualizarla y hacer que tus invitados encuentren todo en segundos." align="center" />
+        <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <article className="rounded-[2rem] border border-[var(--color-border)] bg-white p-6 shadow-sm">
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#F6E9E3] text-[#A96754]"><X size={22} /></span>
+              <h3 className="font-serif text-3xl">Una imagen comun</h3>
+            </div>
+            <ul className="mt-6 grid gap-4 text-[var(--color-muted)]">
+              {["Se pierde en WhatsApp", "No tiene confirmacion integrada", "No permite actualizar datos facilmente", "No reune mapa, fotos, regalos y detalles en un solo lugar"].map((item) => (
+                <li key={item} className="flex gap-3"><X className="mt-0.5 shrink-0 text-[#A96754]" size={18} /> {item}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="rounded-[2rem] border border-[var(--color-gold-light)] bg-[var(--color-surface-warm)] p-6 shadow-[0_20px_60px_rgba(197,155,87,0.18)]">
+            <div className="flex items-center gap-3">
+              <span className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[var(--color-success)]"><Check size={22} /></span>
+              <h3 className="font-serif text-3xl">Una invitacion web</h3>
+            </div>
+            <ul className="mt-6 grid gap-4 text-[var(--color-text)]">
+              {["Todo esta en un solo link", "Se puede compartir por WhatsApp, Instagram o QR", "Incluye ubicacion, fotos y confirmacion", "Se puede actualizar", "Se ve mas profesional"].map((item) => (
+                <li key={item} className="flex gap-3"><Check className="mt-0.5 shrink-0 text-[var(--color-success)]" size={18} /> {item}</li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" className="border-y border-[var(--color-border)] bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-5">
+          <SectionHeading eyebrow="Preguntas frecuentes" title="Dudas habituales antes de reservar" align="center" />
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {faqs.map((faq) => (
+              <article key={faq.question} className="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface-warm)] p-6">
+                <div className="flex gap-3">
+                  <HelpCircle className="mt-1 shrink-0 text-[var(--color-gold-dark)]" size={22} />
+                  <div>
+                    <h3 className="font-serif text-2xl text-[var(--color-text)]">{faq.question}</h3>
+                    <p className="mt-3 leading-7 text-[var(--color-muted)]">{faq.answer}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 sm:py-20">
+        <div className="overflow-hidden rounded-[2.5rem] bg-[linear-gradient(135deg,#3F3B38,#7A623F)] p-8 text-white shadow-[0_26px_80px_rgba(63,59,56,0.22)] sm:p-12">
+          <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-[var(--color-champagne)]">Consulta inicial</p>
+              <h2 className="mt-3 font-serif text-4xl leading-tight sm:text-5xl">Listo para crear la web de tu evento?</h2>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-white/82">Contanos que estas organizando y te recomendamos el plan ideal.</p>
+            </div>
+            <PrimaryButton href={consultUrl} className="bg-white text-[var(--color-text)] hover:bg-[var(--color-bg-soft)]">
+              <MessageCircle size={18} /> Consultar por WhatsApp
+            </PrimaryButton>
+          </div>
+        </div>
+      </section>
+
+      <a
+        href={consultUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Consultar por WhatsApp"
+        className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-whatsapp)] text-white shadow-[0_14px_34px_rgba(37,211,102,0.36)] transition hover:-translate-y-1"
+      >
+        <MessageCircle size={25} />
+      </a>
+
+      <footer className="border-t border-[var(--color-border)] bg-white px-5 py-8">
+        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-6 md:flex-row md:items-center">
+          <div className="flex items-center gap-4">
+            <img src={brand.logo} alt={brand.name} className="h-12 w-12 rounded-2xl" />
+            <div>
+              <p className="font-serif text-2xl text-[var(--color-text)]">{brand.name}</p>
+              <p className="mt-1 text-sm text-[var(--color-muted)]">Invitaciones digitales en formato web para eventos especiales.</p>
+            </div>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 text-sm font-bold">
+            <a href={brand.instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-4 py-3 text-[var(--color-text)]">
+              <Heart size={17} /> {brand.instagram}
+            </a>
+            <a href={consultUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-text)] px-4 py-3 text-white">
+              <MessageCircle size={17} /> WhatsApp
+            </a>
+          </div>
         </div>
       </footer>
     </main>

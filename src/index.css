@@ -1,11 +1,28 @@
 @import "tailwindcss";
 
+:root {
+  --color-bg: #F8F3EC;
+  --color-bg-soft: #F3EBE1;
+  --color-surface: #FFFFFF;
+  --color-surface-warm: #FBF7F1;
+  --color-gold: #C59B57;
+  --color-gold-dark: #AD803C;
+  --color-gold-light: #D0B17F;
+  --color-champagne: #D9C4A1;
+  --color-text: #3F3B38;
+  --color-muted: #837F7C;
+  --color-border: #E7DAC4;
+  --color-success: #7A8B6F;
+  --color-whatsapp: #25D366;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  background: var(--color-bg);
 }
 
 button,
