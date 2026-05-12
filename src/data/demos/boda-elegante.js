@@ -1,0 +1,42 @@
+import { quinceGlamDemo } from "./quince-glam.js";
+
+export const bodaEleganteDemo = {
+  ...quinceGlamDemo,
+  slug: "demo-boda-elegante",
+  eventType: "boda",
+  template: "boda-elegante",
+  title: "Cami & Hugo",
+  eyebrow: "Nos casamos",
+  dateISO: "2026-06-13T17:00:00-03:00",
+  displayDate: "Sabado 13 de junio de 2026",
+  intro: "Con mucha alegria queremos compartir este dia tan especial con vos. Te esperamos para celebrar nuestro amor y el comienzo de una nueva etapa.",
+  theme: { background: "#FFFDF8", card: "#FFFFFF", primary: "#BFA2DB", primaryDark: "#6E4D86", secondary: "#61B4E1", accent: "#E8D8B8", soft: "#E9DDF5", text: "#3E3544", muted: "#6F6874" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1800&q=90",
+    heroAlt: "Pareja en una celebracion de boda",
+    portrait: "https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=1200&q=90",
+    portraitAlt: "Pareja de novios",
+    portraitPosition: "center",
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=85", alt: "Novios caminando" },
+      { src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=85", alt: "Detalle romantico de boda" },
+      { src: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=900&q=85", alt: "Celebracion de boda" },
+      { src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=85", alt: "Brindis de boda" },
+    ],
+  },
+  location: { title: "Ceremonia y recepcion", name: "Iglesia Bautista Independiente Misionera", address: "El Lenatero 2028, Ciudad Evita, Buenos Aires", time: "17:00 hs", mapsUrl: "https://maps.google.com/" },
+  story: { eyebrow: "Con amor", title: "Nuestra historia", text: "Dios nos ha bendecido al permitir que juntos conozcamos de Su amor. Por Su gracia encamino nuestras vidas y nos permite servirlo juntos.", quote: "Las muchas aguas no podran apagar el amor, ni lo ahogaran los rios." },
+  details: { eyebrow: "El gran dia", intro: "Estos son los datos principales para que puedas acompanarnos.", cardTitle: "Todo listo para celebrar", cardText: "Este bloque puede adaptarse para ceremonia civil, iglesia, recepcion, fiesta, parking, hospedaje o cualquier aviso importante." },
+  timelineTitle: "Un dia para compartir juntos",
+  itinerary: [
+    { time: "18:30", title: "Ceremonia", description: "Momento de celebracion y gratitud." },
+    { time: "20:30", title: "Recepcion", description: "Bienvenida en el salon." },
+    { time: "21:00", title: "Cena", description: "Compartimos la mesa juntos." },
+    { time: "22:30", title: "Fiesta", description: "Musica, fotos y celebracion." },
+  ],
+  galleryTitle: "Galeria",
+  galleryText: "Algunas imagenes nuestras que nos ha gustado compartir.",
+  dressCode: { enabled: true, title: "Elegante", note: "Sugerimos ropa formal. Reservamos el blanco para la novia." },
+  gift: { enabled: true, text: "Tu presencia ya es un regalo muy especial. Si queres ayudarnos a formar nuestro hogar, podes hacerlo con un obsequio o transferencia.", alias: "hugoycamila13", cbu: "" },
+  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "05 de junio de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Cami y Hugo. Mi nombre es:" },
+};

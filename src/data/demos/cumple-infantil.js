@@ -1,0 +1,40 @@
+import { quinceGlamDemo } from "./quince-glam.js";
+
+export const cumpleInfantilDemo = {
+  ...quinceGlamDemo,
+  slug: "demo-cumple-infantil",
+  eventType: "cumple",
+  template: "cumple-infantil",
+  title: "Mateo cumple 30",
+  eyebrow: "Cumple",
+  dateISO: "2026-07-18T22:00:00-03:00",
+  displayDate: "Sabado 18 de julio de 2026",
+  intro: "Se viene una noche para juntarnos, brindar y bailar. Te espero para festejar un nuevo ano con buena musica y gente querida.",
+  theme: { background: "#F8FBFF", card: "#FFFFFF", primary: "#3366CC", primaryDark: "#172B64", secondary: "#FF7A59", accent: "#BFE7D2", soft: "#E2ECFF", text: "#1E2433", muted: "#687083" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1800&q=90",
+    heroAlt: "Globos y decoracion de cumpleanos",
+    portrait: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=90",
+    portraitAlt: "Retrato del cumpleanero",
+    portraitPosition: "center 20%",
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=900&q=85", alt: "Torta de cumpleanos" },
+      { src: "https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=900&q=85", alt: "Fiesta con luces" },
+      { src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=85", alt: "Brindis" },
+      { src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=900&q=85", alt: "Amigos festejando" },
+    ],
+  },
+  location: { title: "Fiesta de cumple", name: "Terraza Central", address: "Av. Fiesta 789, Buenos Aires", time: "22:00 hs", mapsUrl: "https://maps.google.com/" },
+  story: { eyebrow: "A festejar", title: "Otro ano, otra excusa perfecta", text: "Quiero celebrar este cumpleanos como se merece: con amigos, familia, musica y una noche relajada para disfrutar de principio a fin.", quote: "La mejor parte de cumplir anos es tener con quien celebrarlo." },
+  details: { eyebrow: "La juntada", intro: "Aca tenes todo lo importante para llegar y disfrutar.", cardTitle: "Plan simple", cardText: "Este bloque se puede personalizar para fiesta tematica, cena, pool party, brunch, sorpresa o celebracion infantil." },
+  timelineTitle: "Plan de la fiesta",
+  itinerary: [
+    { time: "22:00", title: "Llegada", description: "Recepcion y primeras bebidas." },
+    { time: "23:00", title: "Comida", description: "Picada, opciones dulces y saladas." },
+    { time: "00:00", title: "Brindis", description: "Torta, velas y fotos." },
+    { time: "00:30", title: "Baile", description: "Musica para cerrar arriba." },
+  ],
+  dressCode: { enabled: true, title: "Comodo para bailar", note: "Si hay tematica, colores sugeridos o pileta, este es el lugar para avisarlo." },
+  gift: { enabled: true, text: "Lo importante es que vengas. Si queres sumar al regalo grupal, podes usar este espacio para dejar alias o link.", alias: "mateo.cumple", cbu: "" },
+  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "10 de julio de 2026", whatsappMessage: "Hola, confirmo mi asistencia al cumple de Mateo. Mi nombre es:" },
+};

@@ -1,0 +1,13 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="240" rx="40" fill="#FFFDF8"/>
+  <circle cx="120" cy="112" r="78" stroke="#B98A2E" stroke-width="7"/>
+  <path d="M54 102L120 153L186 102V170C186 178.8 178.8 186 170 186H70C61.2 186 54 178.8 54 170V102Z" fill="#FFF8E9" stroke="#B98A2E" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M54 102L120 151L186 102" stroke="#B98A2E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M74 176L109 144" stroke="#B98A2E" stroke-width="5" stroke-linecap="round"/>
+  <path d="M166 176L131 144" stroke="#B98A2E" stroke-width="5" stroke-linecap="round"/>
+  <path d="M82 72H158C164.6 72 170 77.4 170 84V124L120 160L70 124V84C70 77.4 75.4 72 82 72Z" fill="#FFFDF8" stroke="#D4B778" stroke-width="4"/>
+  <text x="120" y="119" text-anchor="middle" font-family="Georgia, serif" font-size="48" fill="#34302C" letter-spacing="3">IW</text>
+  <path d="M120 141C116 136 108 137 108 144C108 152 120 158 120 158C120 158 132 152 132 144C132 137 124 136 120 141Z" fill="#B98A2E"/>
+  <path d="M162 132L204 161L185 166L196 190L183 197L172 173L158 188L162 132Z" fill="#FFFDF8" stroke="#B98A2E" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M160 115L176 105M178 126H196M172 139L185 153" stroke="#B98A2E" stroke-width="7" stroke-linecap="round"/>
+</svg>
