@@ -5,11 +5,11 @@ export const bautismoDelicadoDemo = {
   slug: "demo-bautismo-delicado",
   eventType: "bautismo",
   template: "bautismo-delicado",
-  title: "Benicio",
+  title: "Santino",
   eyebrow: "Bautismo",
   dateISO: "2026-10-04T11:00:00-03:00",
   displayDate: "Domingo 4 de octubre de 2026",
-  intro: "Nos encantaria que nos acompanhes en un dia lleno de amor, fe y familia para celebrar el bautismo de Benicio.",
+  intro: "Nos encantaria que nos acompanhes en un dia lleno de amor, fe y familia para celebrar el bautismo de Santino.",
   theme: { background: "#FBFEFF", card: "#FFFFFF", primary: "#7BB6D9", primaryDark: "#2F5F78", secondary: "#D8C39A", accent: "#F6E7B7", soft: "#E6F4FA", text: "#23323A", muted: "#66747A" },
   images: {
     hero: "https://images.unsplash.com/photo-1546015720-b8b30df5aa27?auto=format&fit=crop&w=1800&q=90",
@@ -35,6 +35,6 @@ export const bautismoDelicadoDemo = {
     { time: "15:00", title: "Mesa dulce", description: "Brindis, torta y recuerdos." },
   ],
   dressCode: { enabled: true, title: "Tonos claros", note: "Sugerimos una estetica suave y familiar para acompanar la celebracion." },
-  gift: { enabled: true, text: "Tu presencia es lo mas importante. Si queres tener un gesto especial, podes dejar aca un alias, lista de regalos o mensaje familiar.", alias: "benicio.bautismo", cbu: "" },
-  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "25 de septiembre de 2026", whatsappMessage: "Hola, confirmo mi asistencia al bautismo de Benicio. Mi nombre es:" },
+  gift: { enabled: true, text: "Tu presencia es lo mas importante. Si queres tener un gesto especial, podes dejar aca un alias, lista de regalos o mensaje familiar.", alias: "santino.bautismo", cbu: "" },
+  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "25 de septiembre de 2026", whatsappMessage: "Hola, confirmo mi asistencia al bautismo de Santino. Mi nombre es:" },
 };

@@ -4,7 +4,7 @@ import { hexToRgba } from "../../lib/colors.js";
 
 export function HeroModule({ config, theme }) {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-10 text-center">
+    <section data-capture="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 py-10 text-center">
       <motion.div aria-hidden="true" initial={{ scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 2.1, ease: "easeOut" }} className="absolute inset-0">
         <img src={config.images.hero} alt={config.images.heroAlt || config.title} className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-black/35" />
@@ -31,7 +31,7 @@ export function HeroModule({ config, theme }) {
         </div>
       </motion.div>
 
-      <motion.a href="#historia" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }} className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/80" aria-label="Bajar">
+      <motion.a href="#historia" data-capture-hide initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.3 }} className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/80" aria-label="Bajar">
         <ChevronDown className="animate-bounce" size={34} />
       </motion.a>
     </section>

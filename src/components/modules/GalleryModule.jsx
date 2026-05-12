@@ -6,7 +6,7 @@ export function GalleryModule({ config, theme }) {
   const galleryImages = (config.images.gallery || []).filter((image) => image?.src);
   if (!galleryImages.length) return null;
   return (
-    <Section>
+    <Section data-capture="gallery">
       <SectionHeader eyebrow="Recuerdos" title={config.galleryTitle || "Galeria"} text={config.galleryText} theme={theme} />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {galleryImages.map((image, index) => (

@@ -7,7 +7,7 @@ export function DetailsModule({ config, theme }) {
   const details = config.details || {};
   const location = config.location || {};
   return (
-    <Section id="detalles">
+    <Section id="detalles" data-capture="details">
       <SectionHeader eyebrow={details.eyebrow || "Detalles"} title={config.displayDate} text={details.intro} theme={theme} />
       <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
         <div className="rounded-[2rem] border p-8 shadow-xl" style={{ background: theme.card, borderColor: hexToRgba(theme.primary, 0.14) }}>

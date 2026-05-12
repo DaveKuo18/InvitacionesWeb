@@ -29,7 +29,7 @@ Rutas principales:
 /demo/bautismo-delicado
 /demo/bautismo-cielo
 /demo/bautismo-natural
-/demo/cumple-infantil
+/demo/cumple
 /demo/cumple-kids
 /demo/cumple-noche
 /demo/recibida-moderna
@@ -91,7 +91,7 @@ quince-neon
 bautismo-delicado
 bautismo-cielo
 bautismo-natural
-cumple-infantil
+cumple
 cumple-kids
 cumple-noche
 recibida-moderna

@@ -22,7 +22,7 @@ const defaultPages = [
   { slug: "bautismo-delicado", title: "Bautismo delicado", url: "http://127.0.0.1:5173/demo/bautismo-delicado" },
   { slug: "bautismo-cielo", title: "Bautismo cielo", url: "http://127.0.0.1:5173/demo/bautismo-cielo" },
   { slug: "bautismo-natural", title: "Bautismo natural", url: "http://127.0.0.1:5173/demo/bautismo-natural" },
-  { slug: "cumple-infantil", title: "Cumple infantil", url: "http://127.0.0.1:5173/demo/cumple-infantil" },
+  { slug: "cumple", title: "Cumple infantil", url: "http://127.0.0.1:5173/demo/cumple" },
   { slug: "cumple-kids", title: "Cumple kids", url: "http://127.0.0.1:5173/demo/cumple-kids" },
   { slug: "cumple-noche", title: "Cumple noche", url: "http://127.0.0.1:5173/demo/cumple-noche" },
   { slug: "recibida-moderna", title: "Recibida moderna", url: "http://127.0.0.1:5173/demo/recibida-moderna" },

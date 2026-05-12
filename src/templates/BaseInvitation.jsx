@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { HeroModule } from "../components/modules/HeroModule.jsx";
 import { CountdownModule } from "../components/modules/CountdownModule.jsx";
 import { StoryModule } from "../components/modules/StoryModule.jsx";
@@ -11,9 +12,18 @@ import { getTheme, hexToRgba } from "../lib/colors.js";
 
 export function BaseInvitation({ config }) {
   const theme = getTheme(config);
+  const isCapture = new URLSearchParams(window.location.search).get("capture") === "1";
+
+  useEffect(() => {
+    document.documentElement.dataset.capture = isCapture ? "1" : "0";
+    return () => {
+      delete document.documentElement.dataset.capture;
+    };
+  }, [isCapture]);
 
   return (
     <main
+      data-capture-root={isCapture ? "1" : undefined}
       className="min-h-screen overflow-hidden antialiased"
       style={{
         background: `radial-gradient(circle at 8% 4%, ${hexToRgba(theme.primary, 0.24)}, transparent 30rem), radial-gradient(circle at 90% 16%, ${hexToRgba(theme.secondary, 0.18)}, transparent 26rem), linear-gradient(180deg, ${theme.background}, #fff 38%, ${theme.background})`,

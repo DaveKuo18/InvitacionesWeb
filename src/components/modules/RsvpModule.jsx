@@ -16,7 +16,7 @@ export function RsvpModule({ config, theme }) {
   });
 
   return (
-    <Section id="confirmar">
+    <Section id="confirmar" data-capture="rsvp">
       <div className="relative overflow-hidden rounded-[2.5rem] p-8 text-center shadow-2xl sm:p-14" style={{ background: `linear-gradient(135deg, ${theme.primaryDark}, ${theme.primary} 62%, ${theme.secondary})`, color: "white" }}>
         <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-white/10 blur-2xl" />
         <div className="relative z-10 mx-auto max-w-2xl">

@@ -14,12 +14,14 @@ export const templateRegistry = {
   "bautismo-delicado": BautismoDelicado,
   "bautismo-cielo": BautismoDelicado,
   "bautismo-natural": BautismoDelicado,
+  "cumple": CumpleInfantil,
   "cumple-infantil": CumpleInfantil,
   "cumple-kids": CumpleInfantil,
   "cumple-noche": CumpleInfantil,
   "recibida-moderna": RecibidaModerna,
   "recibida-minimal": RecibidaModerna,
   "recibida-bold": RecibidaModerna,
+  "deluxe-personalizada": BodaElegante,
 };
 
 export function getTemplateComponent(template) {

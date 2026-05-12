@@ -83,6 +83,12 @@ export const demoCards = [
     template: "recibida-moderna",
     description: "Una propuesta fresca para celebrar logros y fiestas.",
   },
+  {
+    name: "Demo Deluxe",
+    type: "Plan Deluxe",
+    template: "deluxe-personalizada",
+    description: "Una experiencia completa con RSVP avanzado y secciones a medida.",
+  },
 ];
 
 export const plans = [

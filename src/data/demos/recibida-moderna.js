@@ -14,11 +14,11 @@ export const recibidaModernaDemo = {
   images: {
     hero: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1800&q=90",
     heroAlt: "Celebracion de graduacion",
-    portrait: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=90",
+    portrait: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1200&q=90",
     portraitAlt: "Graduada celebrando",
     portraitPosition: "center",
     gallery: [
-      { src: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=85", alt: "Graduacion" },
+      { src: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=85", alt: "Graduacion" },
       { src: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=900&q=85", alt: "Birretes" },
       { src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=85", alt: "Brindis" },
       { src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=85", alt: "Fiesta" },
