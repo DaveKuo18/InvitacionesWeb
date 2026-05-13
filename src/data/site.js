@@ -54,37 +54,37 @@ export const eventTypes = [
 
 export const demoCards = [
   {
-    name: "Boda elegante",
+    name: "Boda lila elegante",
     type: "Boda",
     template: "boda-elegante",
-    description: "Estética romántica, cuenta regresiva, mapa, regalos y RSVP.",
+    description: "Estética romántica en lila y celeste, con mapa, regalos y RSVP por WhatsApp.",
   },
   {
-    name: "15 años glam",
+    name: "15 rosa glam",
     type: "15 años",
     template: "quince-glam",
-    description: "Una invitación visual, brillante y lista para compartir.",
+    description: "Una invitación visual, brillante, con galería, regalos y RSVP combinado.",
   },
   {
-    name: "Bautismo delicado",
+    name: "Bautismo celeste delicado",
     type: "Bautismo",
     template: "bautismo-delicado",
     description: "Tonos suaves para ceremonias familiares y religiosas.",
   },
   {
-    name: "Cumple infantil",
+    name: "Cumple urbano azul",
     type: "Cumpleaños",
-    template: "cumple-infantil",
-    description: "Color, alegría, ubicación y confirmación en un link.",
+    template: "cumple",
+    description: "Azul, coral y verde suave para una fiesta adulta con itinerario y regalos.",
   },
   {
-    name: "Recibida moderna",
+    name: "Recibida moderna azul",
     type: "Recibida",
     template: "recibida-moderna",
     description: "Una propuesta fresca para celebrar logros y fiestas.",
   },
   {
-    name: "Demo Deluxe",
+    name: "Boda deluxe natural",
     type: "Plan Deluxe",
     template: "deluxe-personalizada",
     description: "Una experiencia completa con RSVP avanzado y secciones a medida.",

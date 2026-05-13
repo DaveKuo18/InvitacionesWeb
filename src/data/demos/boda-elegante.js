@@ -7,8 +7,8 @@ export const bodaEleganteDemo = {
   template: "boda-elegante",
   title: "Cami & Hugo",
   eyebrow: "Nos casamos",
-  dateISO: "2026-06-13T17:00:00-03:00",
-  displayDate: "Sabado 13 de junio de 2026",
+  dateISO: "2026-08-22T17:00:00-03:00",
+  displayDate: "Sabado 22 de agosto de 2026",
   intro: "Con mucha alegria queremos compartir este dia tan especial con vos. Te esperamos para celebrar nuestro amor y el comienzo de una nueva etapa.",
   theme: { background: "#FFFDF8", card: "#FFFFFF", primary: "#BFA2DB", primaryDark: "#6E4D86", secondary: "#61B4E1", accent: "#E8D8B8", soft: "#E9DDF5", text: "#3E3544", muted: "#6F6874" },
   images: {
@@ -37,6 +37,6 @@ export const bodaEleganteDemo = {
   galleryTitle: "Galeria",
   galleryText: "Algunas imagenes nuestras que nos ha gustado compartir.",
   dressCode: { enabled: true, title: "Elegante", note: "Sugerimos ropa formal. Reservamos el blanco para la novia." },
-  gift: { enabled: true, text: "Tu presencia ya es un regalo muy especial. Si queres ayudarnos a formar nuestro hogar, podes hacerlo con un obsequio o transferencia.", alias: "hugoycamila13", cbu: "" },
-  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "05 de junio de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Cami y Hugo. Mi nombre es:" },
+  gift: { enabled: true, text: "Tu presencia ya es un regalo muy especial. Si queres ayudarnos a formar nuestro hogar, podes hacerlo con un obsequio o transferencia.", alias: "cami.hugo.boda", cbu: "" },
+  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "10 de agosto de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Cami y Hugo. Mi nombre es:" },
 };

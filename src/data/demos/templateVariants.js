@@ -1,6 +1,6 @@
 import { bautismoDelicadoDemo } from "./bautismo-delicado.js";
 import { bodaEleganteDemo } from "./boda-elegante.js";
-import { cumpleInfantilDemo } from "./cumple-infantil.js";
+import { cumpleInfantilDemo } from "./cumple.js";
 import { quinceGlamDemo } from "./quince-glam.js";
 import { recibidaModernaDemo } from "./recibida-moderna.js";
 
@@ -30,11 +30,15 @@ export const bodaClasicaDemo = makeVariant(bodaEleganteDemo, {
   template: "boda-clasica",
   title: "Martina & Julian",
   eyebrow: "Boda clasica",
+  dateISO: "2026-05-16T18:00:00-03:00",
+  displayDate: "Sabado 16 de mayo de 2026",
   intro: "Una celebracion elegante, atemporal y romantica para compartir el comienzo de nuestra vida juntos.",
+  location: { time: "18:00 hs" },
   theme: { background: "#FFFCF7", primary: "#9B7E46", primaryDark: "#4E3924", secondary: "#D8C7A3", accent: "#F5E9C8", soft: "#F7EEDB", text: "#322A22", muted: "#74695D" },
   story: { eyebrow: "Nuestra historia", title: "Un amor para toda la vida", text: "Queremos celebrar con una noche sobria, calida y llena de detalles pensados para nuestra familia y amigos.", quote: "El amor se celebra mejor cuando se comparte." },
   dressCode: { title: "Etiqueta elegante", note: "Sugerimos traje, vestido largo o cocktail. Reservamos blanco y marfil para la novia." },
-  rsvp: { whatsappMessage: "Hola, confirmo mi asistencia a la boda de Martina y Julian. Mi nombre es:" },
+  gift: { alias: "martu.juli.boda" },
+  rsvp: { deadline: "2 de mayo de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Martina y Julian. Mi nombre es:" },
 });
 
 export const bodaBohoDemo = makeVariant(bodaEleganteDemo, {
@@ -42,7 +46,10 @@ export const bodaBohoDemo = makeVariant(bodaEleganteDemo, {
   template: "boda-boho",
   title: "Lola & Nico",
   eyebrow: "Boda boho",
+  dateISO: "2026-10-10T16:30:00-03:00",
+  displayDate: "Sabado 10 de octubre de 2026",
   intro: "Nos casamos al aire libre y queremos una tarde relajada, con naturaleza, musica suave y mucho amor.",
+  location: { title: "Ceremonia al aire libre", name: "Finca Las Acacias", address: "Camino del Sol 1450, Buenos Aires", time: "16:30 hs" },
   theme: { background: "#F9F5EF", primary: "#A66A43", primaryDark: "#5C3524", secondary: "#78946A", accent: "#E7CDA7", soft: "#EFE2D2", text: "#332820", muted: "#756A5F" },
   images: {
     hero: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1800&q=90",
@@ -50,6 +57,8 @@ export const bodaBohoDemo = makeVariant(bodaEleganteDemo, {
   },
   story: { eyebrow: "Simple y nuestro", title: "Una celebracion con alma", text: "Elegimos una propuesta descontracturada, natural y cercana para disfrutar sin apuro.", quote: "Que sea lindo, real y con los pies en la tierra." },
   dressCode: { title: "Boho chic", note: "Tonos tierra, lino, flores, vestidos fluidos y calzado comodo para jardin." },
+  gift: { alias: "lola.nico.boho" },
+  rsvp: { deadline: "26 de septiembre de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Lola y Nico. Mi nombre es:" },
 });
 
 export const quinceDreamDemo = makeVariant(quinceGlamDemo, {
@@ -78,6 +87,8 @@ export const quinceNeonDemo = makeVariant(quinceGlamDemo, {
     hero: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1800&q=90",
     portrait: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1200&q=90",
   },
+  modules: { music: true },
+  music: { enabled: true, url: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" },
   story: { eyebrow: "A brillar", title: "Una noche con mucha actitud", text: "La idea es celebrar fuerte: musica, luces, fotos, amigas y una pista que no pare.", quote: "Que nadie se quede sin bailar." },
   dressCode: { title: "Fiesta glow", note: "Negro, plateado, fucsia, accesorios brillantes o detalles neon." },
 });
@@ -153,7 +164,10 @@ export const bodaMinimalDemo = makeVariant(bodaEleganteDemo, {
   template: "boda-minimal",
   title: "Ana & Leo",
   eyebrow: "Boda minimal",
+  dateISO: "2026-11-07T18:30:00-03:00",
+  displayDate: "Sabado 7 de noviembre de 2026",
   intro: "Una celebracion serena, moderna y sin excesos, donde cada detalle respira elegancia.",
+  location: { title: "Ceremonia y cena", name: "Casa Noma", address: "Av. del Libertador 3900, Buenos Aires", time: "18:30 hs" },
   theme: { background: "#F8F8F5", primary: "#5E675A", primaryDark: "#232820", secondary: "#B7B0A3", accent: "#D8D0C0", soft: "#ECEAE3", text: "#24231F", muted: "#69675F" },
   images: {
     hero: "https://images.unsplash.com/photo-1529634597503-139d3726fed5?auto=format&fit=crop&w=1800&q=90",
@@ -161,6 +175,8 @@ export const bodaMinimalDemo = makeVariant(bodaEleganteDemo, {
   },
   story: { eyebrow: "Menos, mejor", title: "Una boda simple y profunda", text: "Elegimos una estetica limpia para que lo importante se vea: el encuentro, la familia y la emocion.", quote: "La elegancia tambien puede ser calma." },
   dressCode: { title: "Formal minimal", note: "Negro, blanco, gris, oliva, arena o tonos neutros. Reservamos blanco pleno para la novia." },
+  gift: { alias: "ana.leo.minimal" },
+  rsvp: { deadline: "24 de octubre de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Ana y Leo. Mi nombre es:" },
 });
 
 export const bodaTropicalDemo = makeVariant(bodaEleganteDemo, {
@@ -168,7 +184,10 @@ export const bodaTropicalDemo = makeVariant(bodaEleganteDemo, {
   template: "boda-tropical",
   title: "Mili & Fran",
   eyebrow: "Boda tropical",
+  dateISO: "2027-02-13T19:00:00-03:00",
+  displayDate: "Sabado 13 de febrero de 2027",
   intro: "Una fiesta con verde, flores intensas, cocktails y una noche pensada para bailar.",
+  location: { title: "Ceremonia y fiesta", name: "Jardin Botanico Eventos", address: "Costa Verde 220, Tigre", time: "19:00 hs" },
   theme: { background: "#FFFDF2", primary: "#0F8B6F", primaryDark: "#06483A", secondary: "#F97316", accent: "#F8D66D", soft: "#DFF4E8", text: "#17322D", muted: "#63736D" },
   images: {
     hero: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90",
@@ -176,6 +195,8 @@ export const bodaTropicalDemo = makeVariant(bodaEleganteDemo, {
   },
   story: { eyebrow: "Fiesta viva", title: "Celebrar a todo color", text: "Queremos una boda alegre, luminosa y relajada, con una ambientacion que invite a disfrutar.", quote: "Amor, musica y mesa larga." },
   dressCode: { title: "Tropical elegante", note: "Verdes, coral, lino, estampas suaves o accesorios con color." },
+  gift: { alias: "mili.fran.tropical" },
+  rsvp: { deadline: "30 de enero de 2027", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Mili y Fran. Mi nombre es:" },
 });
 
 export const quinceEditorialDemo = makeVariant(quinceGlamDemo, {
@@ -315,17 +336,18 @@ export const babyShowerBotanicoDemo = makeVariant(bautismoDelicadoDemo, {
   slug: "demo-baby-shower-botanico",
   eventType: "baby-shower",
   template: "baby-shower-botanico",
-  title: "Baby shower de Olivia",
+  title: "Baby shower de Caro",
   eyebrow: "Baby shower",
-  intro: "Nos juntamos a celebrar la llegada de Olivia con una tarde dulce, natural y llena de amor.",
+  intro: "Nos juntamos a celebrar la llegada de Caro con una tarde dulce, natural y llena de amor.",
   theme: { background: "#FAFFF7", primary: "#6B8F71", primaryDark: "#2F4F37", secondary: "#F4B8A8", accent: "#F6E7B7", soft: "#E7F3E6", text: "#243025", muted: "#697568" },
   images: {
     hero: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1800&q=90",
     portrait: "https://images.unsplash.com/photo-1546015720-b8b30df5aa27?auto=format&fit=crop&w=1200&q=90",
   },
-  story: { eyebrow: "Llega una nueva vida", title: "Una tarde para esperar con amor", text: "Paleta botanica, rosa suave y verdes para baby showers, gender reveal o bienvenida de bebe.", quote: "Ya te estamos esperando." },
+  story: { eyebrow: "Llega una nueva vida", title: "Una tarde para esperar a Caro", text: "Paleta botanica, rosa suave y verdes para baby showers, gender reveal o bienvenida de beba.", quote: "Ya te estamos esperando." },
   dressCode: { title: "Botanico suave", note: "Verdes, blanco, rosa viejo, beige o lino." },
-  rsvp: { whatsappMessage: "Hola, confirmo mi asistencia al baby shower. Mi nombre es:" },
+  gift: { alias: "caro.babyshower" },
+  rsvp: { whatsappMessage: "Hola, confirmo mi asistencia al baby shower de Caro. Mi nombre es:" },
 });
 
 export const eventoCorporativoDemo = makeVariant(recibidaModernaDemo, {

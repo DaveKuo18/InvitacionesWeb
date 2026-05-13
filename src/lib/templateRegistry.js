@@ -21,7 +21,6 @@ export const templateRegistry = {
   "bautismo-vintage": BautismoDelicado,
   "bautismo-jardin": BautismoDelicado,
   "cumple": CumpleInfantil,
-  "cumple-infantil": CumpleInfantil,
   "cumple-kids": CumpleInfantil,
   "cumple-noche": CumpleInfantil,
   "cumple-pool": CumpleInfantil,

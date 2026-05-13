@@ -2,11 +2,11 @@ import { quinceGlamDemo } from "./quince-glam.js";
 
 export const cumpleInfantilDemo = {
   ...quinceGlamDemo,
-  slug: "demo-cumple-infantil",
+  slug: "demo-cumple",
   eventType: "cumple",
-  template: "cumple-infantil",
+  template: "cumple",
   title: "Dani cumple 30",
-  eyebrow: "Cumple",
+  eyebrow: "Cumple urbano azul",
   dateISO: "2026-09-14T22:00:00-03:00",
   displayDate: "Sabado 18 de julio de 2026",
   intro: "Se viene una noche para juntarnos, brindar y bailar. Te espero para festejar un nuevo ano con buena musica y gente querida.",
@@ -35,6 +35,6 @@ export const cumpleInfantilDemo = {
     { time: "00:30", title: "Baile", description: "Musica para cerrar arriba." },
   ],
   dressCode: { enabled: true, title: "Comodo para bailar", note: "Si hay tematica, colores sugeridos o pileta, este es el lugar para avisarlo." },
-  gift: { enabled: true, text: "Lo importante es que vengas. Si queres sumar al regalo grupal, podes usar este espacio para dejar alias o link.", alias: "mateo.cumple", cbu: "" },
-  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "10 de julio de 2026", whatsappMessage: "Hola, confirmo mi asistencia al cumple de Mateo. Mi nombre es:" },
+  gift: { enabled: true, text: "Lo importante es que vengas. Si queres sumar al regalo grupal, podes usar este espacio para dejar alias o link.", alias: "dani.cumple30", cbu: "" },
+  rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "10 de julio de 2026", whatsappMessage: "Hola, confirmo mi asistencia al cumple de Dani. Mi nombre es:" },
 };

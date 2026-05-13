@@ -44,7 +44,7 @@ export const marketingAssets = [
   demo("quince-glam", "Invitacion web para 15 anos"),
   demo("boda-elegante", "Invitacion web para bodas"),
   demo("bautismo-delicado", "Invitacion web para bautismo"),
-  demo("cumple-infantil", "Invitacion web para cumpleanos"),
+  demo("cumple", "Invitacion web para cumpleanos"),
   demo("recibida-moderna", "Invitacion web para recibidas"),
   demo("deluxe-personalizada", "Invitacion web Plan Deluxe"),
 ];

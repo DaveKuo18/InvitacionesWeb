@@ -23,6 +23,8 @@ Rutas principales:
 /demo/quince-glam
 /demo/quince-dream
 /demo/quince-neon
+/demo/quince-editorial
+/demo/quince-pastel
 /demo/boda-elegante
 /demo/boda-clasica
 /demo/boda-boho
@@ -46,6 +48,7 @@ Rutas principales:
 /demo/aniversario-clasico
 /demo/baby-shower-botanico
 /demo/evento-corporativo
+/demo/deluxe-personalizada
 /i/valentina-15
 ```
 
@@ -67,6 +70,8 @@ src/
 ```
 
 La app se sirve desde la raiz. Las demos viven como datos en `src/data/demos`, las invitaciones reales en `src/data/invitations` y los componentes visuales reutilizables en `src/components`.
+
+Hay un mapa mas detallado en `docs/project-structure.json`. Ese archivo resume que se encuentra en cada carpeta, que demos aparecen en la pantalla principal, que templates existen, donde estan los recursos de marketing y donde van los proyectos reales.
 
 ## Agregar una nueva demo
 
@@ -121,6 +126,7 @@ recibida-brunch
 aniversario-clasico
 baby-shower-botanico
 evento-corporativo
+deluxe-personalizada
 ```
 
 El registry vive en `src/lib/templateRegistry.js`. Varias plantillas pueden reutilizar el mismo layout y cambiar el estilo desde configuracion: colores, textos, imagenes, dress code, regalos y RSVP.
@@ -130,12 +136,12 @@ El registry vive en `src/lib/templateRegistry.js`. Varias plantillas pueden reut
 Cada evento tiene varias demos para mostrar opciones al cliente:
 
 ```text
-Boda: elegante, clasica, boho, minimal, tropical
-15: glam, dream, neon, editorial, pastel
-Bautismo: delicado, cielo, natural, vintage, jardin
-Cumple: infantil, kids, noche, pool, black gold
-Recibida: moderna, minimal, bold, tech, brunch
-Especiales: aniversario clasico, baby shower botanico, evento corporativo
+Boda: lila elegante, clasica dorada, boho tierra, minimal oliva, tropical verde/coral, deluxe natural
+15: rosa glam, dream pastel, neon, editorial, pastel
+Bautismo: celeste delicado, cielo, natural, vintage crema, jardin verde
+Cumple: urbano azul, kids naranja, noche violeta, pool turquesa, black gold
+Recibida: moderna azul, minimal gris, bold naranja/azul, tech electrica, brunch calida
+Especiales: aniversario clasico, baby shower botanico de Caro, evento corporativo
 ```
 
 Para sumar un estilo nuevo, crear una config en `src/data/demos/templateVariants.js` o un archivo dedicado en `src/data/demos/`, agregar el `template` al registry y usar `/demo/nombre-template`.
@@ -157,6 +163,18 @@ modules: {
 ```
 
 Para sacar un modulo, cambiarlo a `false`.
+
+Cobertura actual de funcionalidades en demos:
+
+```text
+WhatsApp RSVP: boda, bautismo y cumple
+Formulario RSVP: recibida moderna
+WhatsApp + formulario: quince glam y deluxe
+Regalos con alias: bodas, 15, bautismo, cumple, recibida y baby shower
+CBU: deluxe
+Musica: quince neon
+Galeria, cuenta regresiva, mapa, itinerario y dress code: demos base
+```
 
 ## Cambiar datos editables
 
