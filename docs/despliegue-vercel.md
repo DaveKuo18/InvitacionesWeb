@@ -52,6 +52,12 @@ Abrir:
 http://localhost:5173/i/sofia-15
 ```
 
+En produccion, ese mismo `slug` tambien puede abrirse como subdominio:
+
+```text
+https://sofia-15.invitacionesweb.ar
+```
+
 ## 2. Revisar datos antes de publicar
 
 Antes de desplegar, validar:
@@ -182,11 +188,19 @@ En `Settings > Domains` se puede usar:
 
 ```text
 invitacionesweb.ar/i/sofia-15
-sofia15.invitacionesweb.ar
+sofia-15.invitacionesweb.ar
 www.sofia15.com.ar
 ```
 
-Para un dominio propio:
+Para subdominios de `invitacionesweb.ar`:
+
+1. Agregar `invitacionesweb.ar` en `Settings > Domains`.
+2. Agregar tambien `*.invitacionesweb.ar` para habilitar cualquier invitacion por subdominio.
+3. Configurar en el DNS el registro wildcard `*` que indique Vercel, normalmente como `CNAME` hacia `cname.vercel-dns.com`.
+4. Asegurarse de que el subdominio coincida con el `slug` de la invitacion. Ejemplo: `slug: "sofia-15"` abre en `https://sofia-15.invitacionesweb.ar`.
+5. Esperar la propagacion y probar el link sin `/i/`.
+
+Para un dominio propio externo:
 
 1. Comprar o recibir acceso al dominio.
 2. Agregarlo en `Settings > Domains`.
@@ -209,7 +223,7 @@ Mensaje sugerido:
 
 ```text
 Hola! Ya esta publicada tu invitacion web:
-https://tu-dominio.com/i/sofia-15
+https://sofia-15.invitacionesweb.ar
 
 Te recomiendo abrirla desde el celular, revisar fecha, ubicacion, textos, fotos y confirmar que el boton de WhatsApp funciona bien.
 ```
@@ -223,4 +237,3 @@ Para cambios de texto, fotos o datos:
 3. Crear commit y subir a GitHub.
 4. Vercel despliega automaticamente.
 5. Avisar al cliente cuando el deploy este listo.
-

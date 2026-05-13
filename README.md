@@ -50,6 +50,7 @@ Rutas principales:
 /demo/evento-corporativo
 /demo/deluxe-personalizada
 /i/valentina-15
+https://valentina-15.invitacionesweb.ar
 ```
 
 ## Estructura
@@ -262,7 +263,7 @@ Los archivos generados se guardan en `recursos_redes/`, carpeta ignorada por Git
 
 ## Vercel y dominios
 
-La app usa `BrowserRouter` y `vercel.json`, asi que en Vercel funcionan URLs limpias como `/demo/boda-elegante` y `/i/valentina-15` incluso al recargar la pagina.
+La app usa `BrowserRouter` y `vercel.json`, asi que en Vercel funcionan URLs limpias como `/demo/boda-elegante` y `/i/valentina-15` incluso al recargar la pagina. Tambien detecta subdominios de `invitacionesweb.ar`: si existe una invitacion con `slug: "valentina-15"`, se puede abrir desde `https://valentina-15.invitacionesweb.ar`.
 
 Para publicar en Vercel:
 
@@ -276,9 +277,11 @@ Para publicar en Vercel:
 Para URLs comerciales se puede usar:
 
 ```text
-invitacionesweb.com/demo/quince-glam
-invitacionesweb.com/i/valentina-15
-valentina.invitacionesweb.com/i/valentina-15
+invitacionesweb.ar/demo/quince-glam
+invitacionesweb.ar/i/valentina-15
+valentina-15.invitacionesweb.ar
 ```
+
+Para que los subdominios funcionen en Vercel hay que agregar el dominio wildcard `*.invitacionesweb.ar` en `Settings > Domains` y configurar el DNS wildcard correspondiente. El subdominio debe coincidir con el `slug` del archivo en `src/data/invitations`.
 
 Guia operativa completa para clientes contratados: `docs/despliegue-vercel.md`.

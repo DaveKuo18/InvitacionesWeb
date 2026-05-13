@@ -19,6 +19,7 @@
   },
   "src": {
     "app": {
+      "AppRoutes.jsx": "Rutas React Router, incluyendo deteccion de subdominios para invitaciones reales.",
       "Landing.jsx": "Pantalla principal comercial con hero, demos, planes, extras y FAQ.",
       "NotFound.jsx": "Pantalla 404 interna."
     },
@@ -71,6 +72,7 @@
       "templateRegistry.js": "Mapa entre nombre de template y componente React.",
       "getDemoByTemplate.js": "Busqueda de demo por template.",
       "getInvitationBySlug.js": "Busqueda de invitacion real por slug.",
+      "getInvitationSlugFromHost.js": "Detecta subdominios de invitacionesweb.ar para abrir /i/:slug desde slug.invitacionesweb.ar.",
       "rsvpStorage.js": "Envio o almacenamiento de respuestas RSVP.",
       "whatsapp.js": "Generacion de links de WhatsApp.",
       "colors.js": "Helpers de tema y colores.",
