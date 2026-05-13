@@ -1,0 +1,42 @@
+import { quinceGlamDemo } from "./quince-glam.js";
+
+export const babyShowerDemo = {
+  ...quinceGlamDemo,
+  slug: "demo-baby-shower",
+  eventType: "baby-shower",
+  template: "baby-shower",
+  title: "Baby shower de Caro",
+  eyebrow: "Baby shower",
+  dateISO: "2026-08-30T16:30:00-03:00",
+  displayDate: "Domingo 30 de agosto de 2026",
+  intro: "Nos juntamos a celebrar la llegada de Caro con una tarde dulce, cálida y llena de amor.",
+  theme: { background: "#FFF8F6", card: "#FFFFFF", primary: "#D98BA1", primaryDark: "#8A4659", secondary: "#8FAF8A", accent: "#EFD4A8", soft: "#FCE7EC", text: "#3D3032", muted: "#7B6B70" },
+  images: {
+    hero: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=1800&q=90",
+    heroAlt: "Decoración suave para baby shower",
+    portrait: "https://images.unsplash.com/photo-1546015720-b8b30df5aa27?auto=format&fit=crop&w=1200&q=90",
+    portraitAlt: "Bebé sonriendo",
+    portraitPosition: "center 30%",
+    gallery: [
+      { src: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=85", alt: "Detalles de bebé" },
+      { src: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=900&q=85", alt: "Familia esperando una beba" },
+      { src: "https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=900&q=85", alt: "Mesa dulce clara" },
+      { src: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=85", alt: "Manta y detalles suaves" },
+    ],
+  },
+  location: { title: "Baby shower", name: "Casa de la familia", address: "Av. de los Álamos 123, Buenos Aires", time: "16:30 hs", mapsUrl: "https://maps.google.com/" },
+  story: { eyebrow: "Te esperamos", title: "Una tarde para esperar a Caro", text: "Queremos compartir una merienda tranquila, con juegos, regalitos y muchas fotos para recordar esta etapa tan especial.", quote: "Ya te estamos esperando con todo el amor." },
+  details: { eyebrow: "La merienda", intro: "Estos son los datos principales para acompañarnos.", cardTitle: "Merienda, juegos y recuerdos", cardText: "Este bloque puede adaptarse para lista de regalos, pañales, mesa dulce, juegos, horario de llegada o indicaciones para la familia." },
+  timelineTitle: "Plan de la tarde",
+  itinerary: [
+    { time: "16:30", title: "Llegada", description: "Nos encontramos para merendar." },
+    { time: "17:15", title: "Juegos", description: "Un momento divertido para compartir." },
+    { time: "18:00", title: "Regalitos", description: "Abrimos detalles y sacamos fotos." },
+    { time: "18:45", title: "Brindis", description: "Celebramos la llegada de Caro." },
+  ],
+  galleryTitle: "Detalles",
+  galleryText: "Fotos de inspiración, decoración, familia o momentos especiales.",
+  dressCode: { enabled: true, title: "Tonos suaves", note: "Sugerimos rosa viejo, verde claro, blanco, beige o tonos pastel." },
+  gift: { enabled: true, text: "Tu presencia es lo más importante. Si querés sumar a la llegada de Caro, podés usar este alias o consultar la lista de regalos.", alias: "caro.baby", cbu: "" },
+  rsvp: { ...quinceGlamDemo.rsvp, mode: "both", deadline: "20 de agosto de 2026", whatsappMessage: "Hola, confirmo mi asistencia al baby shower de Caro. Mi nombre es:" },
+};

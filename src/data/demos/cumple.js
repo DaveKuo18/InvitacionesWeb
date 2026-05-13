@@ -12,14 +12,14 @@ export const CumpleDemo = {
   intro: "Se viene una noche para juntarnos, brindar y bailar. Te espero para festejar un nuevo año con buena música y gente querida.",
   theme: { background: "#F8FBFF", card: "#FFFFFF", primary: "#3366CC", primaryDark: "#172B64", secondary: "#FF7A59", accent: "#BFE7D2", soft: "#E2ECFF", text: "#1E2433", muted: "#687083" },
   images: {
-    hero: "https://images.unsplash.com/photo-1530103862676-de8c9debad1díauto=format&fit=crop&w=1800&q=90",
+    hero: "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1800&q=90",
     heroAlt: "Globos y decoracion de cumpleaños",
-    portrait: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1díauto=format&fit=crop&w=1200&q=90",
+    portrait: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1200&q=90",
     portraitAlt: "Retrato del cumpleanero",
     portraitPosition: "center 20%",
     gallery: [
       { src: "https://images.unsplash.com/photo-1464349153735-7db50ed83c84?auto=format&fit=crop&w=900&q=85", alt: "Torta de cumpleaños" },
-      { src: "https://images.unsplash.com/photo-1496024840928-4c417adf211díauto=format&fit=crop&w=900&q=85", alt: "Fiesta con luces" },
+      { src: "https://images.unsplash.com/photo-1496024840928-4c417adf211d?auto=format&fit=crop&w=900&q=85", alt: "Fiesta con luces" },
       { src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=85", alt: "Brindis" },
       { src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=900&q=85", alt: "Amigos festejando" },
     ],

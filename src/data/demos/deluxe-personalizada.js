@@ -19,8 +19,8 @@ export const deluxePersonalizadaDemo = {
     portraitPosition: "center 28%",
     gallery: [
       { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=85", alt: "Ambientación deluxe" },
-      { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aedíauto=format&fit=crop&w=900&q=85", alt: "Salon elegante" },
-      { src: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34acáauto=format&fit=crop&w=900&q=85", alt: "Detalles personalizados" },
+      { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85", alt: "Salon elegante" },
+      { src: "https://images.unsplash.com/photo-1529634806980-85c3dd6d34ac?auto=format&fit=crop&w=900&q=85", alt: "Detalles personalizados" },
       { src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=85", alt: "Brindis de celebración" },
     ],
   },

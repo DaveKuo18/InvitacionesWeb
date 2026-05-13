@@ -190,7 +190,7 @@ export const bodaTropicalDemo = makeVariant(bodaEleganteDemo, {
   location: { title: "Ceremonia y fiesta", name: "Jardín Botánico Eventos", address: "Costa Verde 220, Tigre", time: "19:00 hs" },
   theme: { background: "#FFFDF2", primary: "#0F8B6F", primaryDark: "#06483A", secondary: "#F97316", accent: "#F8D66D", soft: "#DFF4E8", text: "#17322D", muted: "#63736D" },
   images: {
-    hero: "https://images.unsplash.com/photo-1519225421980-715cb0215aedíauto=format&fit=crop&w=1800&q=90",
+    hero: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90",
     portrait: "https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=1200&q=90",
   },
   story: { eyebrow: "Fiesta viva", title: "Celebrar a todo color", text: "Queremos una boda alegre, luminosa y relajada, con una ambientacion que invite a disfrutar.", quote: "Amor, música y mesa larga." },
@@ -244,9 +244,9 @@ export const bautismoVintageDemo = makeVariant(bautismoDelicadoDemo, {
   dressCode: { title: "Crema y claros", note: "Tonos crema, blanco, beige, celeste suave o rosa viejo." },
 });
 
-export const bautismoJardínDemo = makeVariant(bautismoDelicadoDemo, {
-  slug: "demo-bautismo-jardín",
-  template: "bautismo-jardín",
+export const bautismoJardinDemo = makeVariant(bautismoDelicadoDemo, {
+  slug: "demo-bautismo-jardin",
+  template: "bautismo-jardin",
   title: "Benicio",
   eyebrow: "Bautismo jardín",
   intro: "Una celebración al aire libre, con verde suave, mesa familiar y tarde luminosa.",
@@ -283,7 +283,7 @@ export const cumpleBlackGoldDemo = makeVariant(CumpleDemo, {
   theme: { background: "#11100E", card: "#FFFFFF", primary: "#D6A94A", primaryDark: "#7B5A1E", secondary: "#2DD4BF", accent: "#F9E4A5", soft: "#F7ECD0", text: "#241E16", muted: "#72685C" },
   images: {
     hero: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1800&q=90",
-    portrait: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2díauto=format&fit=crop&w=1200&q=90",
+    portrait: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=90",
   },
   story: { eyebrow: "A brindar", title: "Una celebración con estilo", text: "Una opción sobria para cumpleaños adultos, cenas, aniversarios o fiestas privadas.", quote: "La noche merece un brindis dorado." },
   dressCode: { title: "Elegante noche", note: "Negro, dorado, blanco o un detalle con brillo." },
@@ -332,10 +332,10 @@ export const aniversarioClasicoDemo = makeVariant(bodaEleganteDemo, {
   rsvp: { whatsappMessage: "Hola, confirmo mi asistencia al aniversario. Mi nombre es:" },
 });
 
-export const babyShowerBotánicoDemo = makeVariant(bautismoDelicadoDemo, {
-  slug: "demo-baby-shower-botánico",
+export const babyShowerBotanicoDemo = makeVariant(bautismoDelicadoDemo, {
+  slug: "demo-baby-shower-botanico",
   eventType: "baby-shower",
-  template: "baby-shower-botánico",
+  template: "baby-shower-botanico",
   title: "Baby shower de Caro",
   eyebrow: "Baby shower",
   intro: "Nos juntamos a celebrar la llegada de Caro con una tarde dulce, natural y llena de amor.",
@@ -379,7 +379,7 @@ export const templateVariantDemos = [
   bautismoCieloDemo,
   bautismoNaturalDemo,
   bautismoVintageDemo,
-  bautismoJardínDemo,
+  bautismoJardinDemo,
   cumpleKidsDemo,
   cumpleNocheDemo,
   cumplePoolDemo,
@@ -389,6 +389,6 @@ export const templateVariantDemos = [
   recibidaTechDemo,
   recibidaBrunchDemo,
   aniversarioClasicoDemo,
-  babyShowerBotánicoDemo,
+  babyShowerBotanicoDemo,
   eventoCorporativoDemo,
 ];

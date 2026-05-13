@@ -20,7 +20,7 @@ export const quinceGlamDemo = {
     portraitAlt: "Retrato de la quinceanera",
     portraitPosition: "center 20%",
     gallery: [
-      { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aedíauto=format&fit=crop&w=900&q=85", alt: "Salon decorado" },
+      { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=85", alt: "Salon decorado" },
       { src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=85", alt: "Luces de fiesta" },
       { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=900&q=85", alt: "Mesa dulce" },
       { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85", alt: "Pista de baile" },

@@ -34,7 +34,8 @@ Rutas principales:
 /demo/bautismo-cielo
 /demo/bautismo-natural
 /demo/bautismo-vintage
-/demo/bautismo-jardín
+/demo/bautismo-jardin
+/demo/baby-shower
 /demo/cumple
 /demo/cumple-kids
 /demo/cumple-noche
@@ -46,7 +47,7 @@ Rutas principales:
 /demo/recibida-tech
 /demo/recibida-brunch
 /demo/aniversario-clasico
-/demo/baby-shower-botánico
+/demo/baby-shower-botanico
 /demo/evento-corporativo
 /demo/deluxe-personalizada
 /i/valentina-15
@@ -113,7 +114,7 @@ bautismo-delicado
 bautismo-cielo
 bautismo-natural
 bautismo-vintage
-bautismo-jardín
+bautismo-jardin
 cumple
 cumple-kids
 cumple-noche
@@ -125,7 +126,8 @@ recibida-bold
 recibida-tech
 recibida-brunch
 aniversario-clasico
-baby-shower-botánico
+baby-shower
+baby-shower-botanico
 evento-corporativo
 deluxe-personalizada
 ```

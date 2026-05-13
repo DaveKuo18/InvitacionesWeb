@@ -1,6 +1,7 @@
 import { BodaElegante } from "../templates/boda/BodaElegante.jsx";
 import { QuinceGlam } from "../templates/quince/QuinceGlam.jsx";
 import { BautismoDelicado } from "../templates/bautismo/BautismoDelicado.jsx";
+import { BabyShower } from "../templates/baby-shower/BabyShower.jsx";
 import { Cumple } from "../templates/cumple/Cumple.jsx";
 import { RecibidaModerna } from "../templates/recibida/RecibidaModerna.jsx";
 
@@ -20,6 +21,7 @@ export const templateRegistry = {
   "bautismo-natural": BautismoDelicado,
   "bautismo-vintage": BautismoDelicado,
   "bautismo-jardin": BautismoDelicado,
+  "baby-shower": BabyShower,
   "cumple": Cumple,
   "cumple-kids": Cumple,
   "cumple-noche": Cumple,
@@ -31,7 +33,7 @@ export const templateRegistry = {
   "recibida-tech": RecibidaModerna,
   "recibida-brunch": RecibidaModerna,
   "aniversario-clasico": BodaElegante,
-  "baby-shower-botanico": BautismoDelicado,
+  "baby-shower-botanico": BabyShower,
   "evento-corporativo": RecibidaModerna,
   "deluxe-personalizada": BodaElegante,
 };

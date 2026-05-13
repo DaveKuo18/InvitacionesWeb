@@ -4,10 +4,10 @@ export const me_recibo_magui = {
   ...recibidaModernaDemo,
   slug: "me_recibo_magui",
   status: "active",
-  template: "recibidaModerna",
+  template: "recibida-moderna",
   templateVersion: "1.0",
   title: "Me recibí!",
-  eyebrow: "Mis 15",
+  eyebrow: "Recibida",
   rsvp: {
     ...recibidaModernaDemo.rsvp,
     mode: "whatsapp",

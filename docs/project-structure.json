@@ -50,6 +50,7 @@
       "quince-glam.js": "Demo base de 15 rosa glam.",
       "boda-elegante.js": "Demo base de boda lila elegante.",
       "bautismo-delicado.js": "Demo base de bautismo celeste delicado.",
+      "baby-shower.js": "Demo base de baby shower rosa y verde.",
       "cumple.js": "Demo base de cumple urbano azul.",
       "recibida-moderna.js": "Demo base de recibida moderna azul.",
       "deluxe-personalizada.js": "Demo premium con RSVP avanzado y secciones completas.",
@@ -63,6 +64,7 @@
     "templates": {
       "BaseInvitation.jsx": "Layout comun que renderiza modulos según configuración.",
       "boda/BodaElegante.jsx": "Template visual para bodas y eventos afines.",
+      "baby-shower/BabyShower.jsx": "Template visual para baby showers.",
       "quince/QuinceGlam.jsx": "Template visual para fiestas de 15.",
       "bautismo/BautismoDelicado.jsx": "Template visual para bautismos, comuniones y baby showers.",
       "cumple/Cumple.jsx": "Template visual para cumples infantiles o adultos.",
@@ -117,7 +119,8 @@
   "templateFamilies": {
     "bodas": ["boda-elegante", "boda-clasica", "boda-boho", "boda-minimal", "boda-tropical", "deluxe-personalizada"],
     "quince": ["quince-glam", "quince-dream", "quince-neon", "quince-editorial", "quince-pastel"],
-    "bautismo": ["bautismo-delicado", "bautismo-cielo", "bautismo-natural", "bautismo-vintage", "bautismo-jardín", "baby-shower-botánico"],
+    "bautismo": ["bautismo-delicado", "bautismo-cielo", "bautismo-natural", "bautismo-vintage", "bautismo-jardin"],
+    "babyShower": ["baby-shower", "baby-shower-botanico"],
     "cumple": ["cumple", "cumple-kids", "cumple-noche", "cumple-pool", "cumple-black-gold"],
     "recibida": ["recibida-moderna", "recibida-minimal", "recibida-bold", "recibida-tech", "recibida-brunch"],
     "especiales": ["aniversario-clasico", "evento-corporativo"]
