@@ -24,7 +24,7 @@ export function RsvpForm({ config, theme }) {
       setValues(initialValues);
     } catch (err) {
       setStatus("error");
-      setError(err.message || "No pudimos enviar la confirmacion.");
+      setError(err.message || "No pudimos enviar la confirmación.");
     }
   };
 
@@ -70,7 +70,7 @@ export function RsvpForm({ config, theme }) {
           </label>
         ))}
       </div>
-      {status === "success" && <p className="mt-5 rounded-2xl bg-green-50 px-4 py-3 text-sm font-semibold text-green-800">Confirmacion enviada. Muchas gracias.</p>}
+      {status === "success" && <p className="mt-5 rounded-2xl bg-green-50 px-4 py-3 text-sm font-semibold text-green-800">Confirmación enviada. Muchas gracias.</p>}
       {status === "error" && <p className="mt-5 rounded-2xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-800">{error}</p>}
       <button
         type="submit"
@@ -78,7 +78,7 @@ export function RsvpForm({ config, theme }) {
         className="mt-6 inline-flex w-full items-center justify-center gap-3 rounded-full px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] shadow-lg transition hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70"
         style={{ background: theme.primaryDark, color: "white" }}
       >
-        <Send size={18} /> {status === "loading" ? "Enviando..." : form.submitLabel || "Enviar confirmacion"}
+        <Send size={18} /> {status === "loading" ? "Enviando..." : form.submitLabel || "Enviar confirmación"}
       </button>
     </form>
   );

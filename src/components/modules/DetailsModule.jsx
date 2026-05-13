@@ -14,7 +14,7 @@ export function DetailsModule({ config, theme }) {
           <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full" style={{ background: theme.soft, color: theme.primaryDark }}>
             <CalendarDays size={27} />
           </div>
-          <h3 className="font-serif text-3xl">{location.title || "Celebracion"}</h3>
+          <h3 className="font-serif text-3xl">{location.title || "Celebración"}</h3>
           <p className="mt-4 flex items-start gap-3 text-lg" style={{ color: theme.muted }}><Clock className="mt-1 shrink-0" size={20} /> {location.time}</p>
           <p className="mt-3 flex items-start gap-3 text-lg" style={{ color: theme.muted }}>
             <MapPin className="mt-1 shrink-0" size={20} />
@@ -29,7 +29,7 @@ export function DetailsModule({ config, theme }) {
           <p className="mt-4 leading-8" style={{ color: theme.muted }}>{details.cardText}</p>
           {location.mapsUrl && (
             <a href={location.mapsUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] shadow-lg transition hover:-translate-y-0.5" style={{ background: theme.primaryDark, color: "white" }}>
-              <MapPin size={18} /> Abrir ubicacion
+              <MapPin size={18} /> Abrir ubicación
             </a>
           )}
         </div>

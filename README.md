@@ -1,8 +1,8 @@
 # Invitaciones Web
 
-App Vite + React para vender y mantener invitaciones digitales desde una sola base de codigo. Las demos y los clientes reales usan plantillas reutilizables y datos por configuracion.
+App Vite + React para vender y mantener invitaciones digitales desde una sola base de código. Las demos y los clientes reales usan plantillas reutilizables y datos por configuración.
 
-## Como correr
+## Cómo correr
 
 ```bash
 npm install
@@ -34,7 +34,7 @@ Rutas principales:
 /demo/bautismo-cielo
 /demo/bautismo-natural
 /demo/bautismo-vintage
-/demo/bautismo-jardin
+/demo/bautismo-jardín
 /demo/cumple
 /demo/cumple-kids
 /demo/cumple-noche
@@ -46,7 +46,7 @@ Rutas principales:
 /demo/recibida-tech
 /demo/recibida-brunch
 /demo/aniversario-clasico
-/demo/baby-shower-botanico
+/demo/baby-shower-botánico
 /demo/evento-corporativo
 /demo/deluxe-personalizada
 /i/valentina-15
@@ -70,9 +70,9 @@ src/
   types/
 ```
 
-La app se sirve desde la raiz. Las demos viven como datos en `src/data/demos`, las invitaciones reales en `src/data/invitations` y los componentes visuales reutilizables en `src/components`.
+La app se sirve desde la raíz. Las demos viven como datos en `src/data/demos`, las invitaciones reales en `src/data/invitations` y los componentes visuales reutilizables en `src/components`.
 
-Hay un mapa mas detallado en `docs/project-structure.json`. Ese archivo resume que se encuentra en cada carpeta, que demos aparecen en la pantalla principal, que templates existen, donde estan los recursos de marketing y donde van los proyectos reales.
+Hay un mapa más detallado en `docs/project-structure.json`. Ese archivo resume que se encuentra en cada carpeta, que demos aparecen en la pantalla principal, que templates existen, donde estan los recursos de marketing y donde van los proyectos reales.
 
 ## Agregar una nueva demo
 
@@ -81,7 +81,7 @@ Hay un mapa mas detallado en `docs/project-structure.json`. Ese archivo resume q
 3. Agregarlo a `src/data/demos/index.js`.
 4. Abrir `/demo/nombre-template`.
 
-## Agregar una invitacion real
+## Agregar una invitación real
 
 1. Crear `src/data/invitations/cliente-slug.js`.
 2. Usar `status: "active"` y `slug: "cliente-slug"`.
@@ -113,7 +113,7 @@ bautismo-delicado
 bautismo-cielo
 bautismo-natural
 bautismo-vintage
-bautismo-jardin
+bautismo-jardín
 cumple
 cumple-kids
 cumple-noche
@@ -125,24 +125,24 @@ recibida-bold
 recibida-tech
 recibida-brunch
 aniversario-clasico
-baby-shower-botanico
+baby-shower-botánico
 evento-corporativo
 deluxe-personalizada
 ```
 
-El registry vive en `src/lib/templateRegistry.js`. Varias plantillas pueden reutilizar el mismo layout y cambiar el estilo desde configuracion: colores, textos, imagenes, dress code, regalos y RSVP.
+El registry vive en `src/lib/templateRegistry.js`. Varias plantillas pueden reutilizar el mismo layout y cambiar el estilo desde configuración: colores, textos, imágenes, dress code, regalos y RSVP.
 
 ## Estilos comerciales por evento
 
 Cada evento tiene varias demos para mostrar opciones al cliente:
 
 ```text
-Boda: lila elegante, clasica dorada, boho tierra, minimal oliva, tropical verde/coral, deluxe natural
+Boda: lila elegante, clásica dorada, boho tierra, minimal oliva, tropical verde/coral, deluxe natural
 15: rosa glam, dream pastel, neon, editorial, pastel
-Bautismo: celeste delicado, cielo, natural, vintage crema, jardin verde
+Bautismo: celeste delicado, cielo, natural, vintage crema, jardín verde
 Cumple: urbano azul, kids naranja, noche violeta, pool turquesa, black gold
-Recibida: moderna azul, minimal gris, bold naranja/azul, tech electrica, brunch calida
-Especiales: aniversario clasico, baby shower botanico de Caro, evento corporativo
+Recibida: moderna azul, minimal gris, bold naranja/azul, tech eléctrica, brunch cálida
+Especiales: aniversario clasico, baby shower botánico de Caro, evento corporativo
 ```
 
 Para sumar un estilo nuevo, crear una config en `src/data/demos/templateVariants.js` o un archivo dedicado en `src/data/demos/`, agregar el `template` al registry y usar `/demo/nombre-template`.
@@ -163,7 +163,7 @@ modules: {
 }
 ```
 
-Para sacar un modulo, cambiarlo a `false`.
+Para sacár un modulo, cambiarlo a `false`.
 
 Cobertura actual de funcionalidades en demos:
 
@@ -173,19 +173,19 @@ Formulario RSVP: recibida moderna
 WhatsApp + formulario: quince glam y deluxe
 Regalos con alias: bodas, 15, bautismo, cumple, recibida y baby shower
 CBU: deluxe
-Musica: quince neon
-Galeria, cuenta regresiva, mapa, itinerario y dress code: demos base
+Música: quince neon
+Galería, cuenta regresiva, mapa, itinerario y dress code: demos base
 ```
 
 ## Cambiar datos editables
 
-Todo lo editable vive en el archivo de configuracion:
+Todo lo editable vive en el archivo de configuración:
 
 ```js
 title: "Valentina",
 eyebrow: "Mis 15",
 dateISO: "2026-09-19T21:00:00-03:00",
-displayDate: "Sabado 19 de septiembre de 2026",
+displayDate: "Sábado 19 de septiembre de 2026",
 theme: {
   primary: "#9A2F68",
   secondary: "#F4D7E8",
@@ -229,7 +229,7 @@ rsvp: {
     fields: [
       { name: "nombre", label: "Nombre y apellido", type: "text", required: true },
       { name: "cantidad", label: "Cantidad de asistentes", type: "number", required: true },
-      { name: "telefono", label: "Telefono", type: "tel", required: false },
+      { name: "telefono", label: "Teléfono", type: "tel", required: false },
       { name: "mensaje", label: "Mensaje", type: "textarea", required: false },
     ],
     storage: {
@@ -263,7 +263,7 @@ Los archivos generados se guardan en `recursos_redes/`, carpeta ignorada por Git
 
 ## Vercel y dominios
 
-La app usa `BrowserRouter` y `vercel.json`, asi que en Vercel funcionan URLs limpias como `/demo/boda-elegante` y `/i/valentina-15` incluso al recargar la pagina. Tambien detecta subdominios de `invitacionesweb.ar`: si existe una invitacion con `slug: "valentina-15"`, se puede abrir desde `https://valentina-15.invitacionesweb.ar`.
+La app usa `BrowserRouter` y `vercel.json`, asi que en Vercel funcionan URLs limpias como `/demo/boda-elegante` y `/i/valentina-15` incluso al recargar la página. También detecta subdominios de `invitacionesweb.ar`: si existe una invitación con `slug: "valentina-15"`, se puede abrir desde `https://valentina-15.invitacionesweb.ar`.
 
 Para publicar en Vercel:
 

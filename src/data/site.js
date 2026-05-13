@@ -141,7 +141,7 @@ export const plans = [
       "Campos personalizados para invitados",
       "Música o video",
       "Galería extendida",
-      "Secciones especiales",
+      "Secciónes especiales",
       "Soporte hasta el evento",
       "Opción de dominio propio",
     ],
@@ -197,7 +197,7 @@ export const faqs = [
   },
   {
     question: "¿Necesito pagar hosting?",
-    answer: "No necesariamente. Los planes incluyen una opción de link personalizado de Invitaciones Web AR. El dominio propio es opcional.",
+    answer: "No necesariamente. Los planes incluyen una opción de link personalizado de Invitaciones Web AR. El dominio propio es opciónal.",
   },
   {
     question: "¿Qué pasa si no tengo fotos profesionales?",

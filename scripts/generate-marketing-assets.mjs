@@ -43,7 +43,7 @@ function run(command, args, options = {}) {
     child.on("error", reject);
     child.on("exit", (code) => {
       if (code === 0) resolve({ stderr });
-      else reject(new Error(`${command} termino con codigo ${code}\n${stderr}`));
+      else reject(new Error(`${command} termino con código ${code}\n${stderr}`));
     });
   });
 }
@@ -92,17 +92,7 @@ function withCaptureParam(url) {
 function resolveCaptureUrl(asset, baseUrl) {
   const rawUrl = asset.url || `/demo/${asset.slug}`;
   const url = rawUrl.startsWith("http") ? new URL(rawUrl) : new URL(rawUrl, baseUrl);
-  const route = `${url.pathname}${url.search}${url.hash ? url.hash.replace(/^#/, "") : ""}`;
-
-  if (url.hash) {
-    return withCaptureParam(url).toString();
-  }
-
-  const hashUrl = new URL(baseUrl);
-  hashUrl.pathname = "/";
-  hashUrl.search = "";
-  hashUrl.hash = route.startsWith("/") ? route : `/${route}`;
-  return withCaptureParam(hashUrl).toString();
+  return withCaptureParam(url).toString();
 }
 
 function selectAssets() {

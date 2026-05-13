@@ -23,5 +23,5 @@ export async function submitRsvp(config, values) {
     return payload;
   }
 
-  throw new Error("No hay un webhook configurado para guardar esta confirmacion.");
+  throw new Error("No hay un webhook configurado para guardar esta confirmación.");
 }

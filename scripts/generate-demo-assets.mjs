@@ -17,7 +17,7 @@ const defaultPages = [
   { slug: "quince-dream", title: "Quince dream", url: "http://127.0.0.1:5173/demo/quince-dream" },
   { slug: "quince-neon", title: "Quince neon", url: "http://127.0.0.1:5173/demo/quince-neon" },
   { slug: "boda-elegante", title: "Boda elegante", url: "http://127.0.0.1:5173/demo/boda-elegante" },
-  { slug: "boda-clasica", title: "Boda clasica", url: "http://127.0.0.1:5173/demo/boda-clasica" },
+  { slug: "boda-clasica", title: "Boda clásica", url: "http://127.0.0.1:5173/demo/boda-clasica" },
   { slug: "boda-boho", title: "Boda boho", url: "http://127.0.0.1:5173/demo/boda-boho" },
   { slug: "bautismo-delicado", title: "Bautismo delicado", url: "http://127.0.0.1:5173/demo/bautismo-delicado" },
   { slug: "bautismo-cielo", title: "Bautismo cielo", url: "http://127.0.0.1:5173/demo/bautismo-cielo" },
@@ -57,7 +57,7 @@ function run(command, args) {
     const child = spawn(command, args, { stdio: "inherit" });
     child.on("exit", (code) => {
       if (code === 0) resolve();
-      else reject(new Error(`${command} termino con codigo ${code}`));
+      else reject(new Error(`${command} termino con código ${code}`));
     });
   });
 }

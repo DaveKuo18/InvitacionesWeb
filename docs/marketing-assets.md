@@ -15,7 +15,7 @@ Sistema para generar capturas verticales, portadas y reels demo de las invitacio
 npm run assets:demo -- --slug quince-glam
 ```
 
-Tambien se puede pasar una URL concreta:
+También se puede pasar una URL concreta:
 
 ```bash
 npm run assets:demo -- --url http://localhost:5173/demo/quince-glam --slug quince-glam
@@ -42,7 +42,7 @@ Editar `scripts/marketing-assets.config.mjs` y agregar un item a `marketingAsset
   slug: "nueva-demo",
   type: "demo",
   url: "/demo/nueva-demo",
-  title: "Invitacion web para evento",
+  title: "Invitación web para evento",
   outputDir: "public/marketing/nueva-demo",
   screenshots: [
     { name: "01-hero.jpg", scroll: 0 },
@@ -80,7 +80,7 @@ reel-short.mp4
 reel-demo.mp4
 ```
 
-Las imagenes salen en 1080x1920. Los videos salen en 1080x1920, 9:16, 30 FPS, MP4, H.264 y `yuv420p`.
+Las imágenes salen en 1080x1920. Los videos salen en 1080x1920, 9:16, 30 FPS, MP4, H.264 y `yuv420p`.
 
 ## Modo captura
 
@@ -88,7 +88,7 @@ El script abre las invitaciones con `?capture=1`. En ese modo se ocultan control
 
 ## Edicion final en CapCut o Canva
 
-Usar `reel-short.mp4` para piezas rapidas y `reel-demo.mp4` para mostrar mas secciones. La configuracion ya deja preparado un bloque `overlays` para automatizar textos en una etapa futura.
+Usar `reel-short.mp4` para piezas rapidas y `reel-demo.mp4` para mostrar más secciones. La configuración ya deja preparado un bloque `overlays` para automatizar textos en una etapa futura.
 
 Preset final recomendado:
 

@@ -37,9 +37,9 @@ const heroDemo = availableDemos[0];
 
 const eventTypeLabels = {
   boda: "Boda",
-  quince: "15 anos",
+  quince: "15 años",
   bautismo: "Bautismo",
-  cumple: "Cumpleanos",
+  cumple: "Cumpleaños",
   recibida: "Recibida",
   aniversario: "Aniversario",
   "baby-shower": "Baby shower",

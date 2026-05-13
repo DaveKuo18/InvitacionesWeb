@@ -36,8 +36,8 @@ export function MusicModule({ config, theme }) {
       data-capture-hide
       className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-2xl transition hover:scale-105"
       style={{ background: theme.primary, color: "white" }}
-      aria-label={playing ? "Pausar musica" : "Reproducir musica"}
-      title={playing ? "Pausar musica" : "Reproducir musica"}
+      aria-label={playing ? "Pausar música" : "Reproducir música"}
+      title={playing ? "Pausar música" : "Reproducir música"}
     >
       {playing ? <Pause size={22} /> : <Play size={22} />}
     </button>

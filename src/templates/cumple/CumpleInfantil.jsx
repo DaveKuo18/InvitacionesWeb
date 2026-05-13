@@ -1,5 +1,5 @@
 import { BaseInvitation } from "../BaseInvitation.jsx";
 
-export function CumpleInfantil({ config }) {
+export function Cumple({ config }) {
   return <BaseInvitation config={config} />;
 }

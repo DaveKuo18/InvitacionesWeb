@@ -20,10 +20,10 @@ const defaultReels = {
 };
 
 const defaultOverlays = [
-  { start: 0, end: 2, text: "Invitacion web personalizada" },
-  { start: 2, end: 5, text: "Cuenta regresiva + ubicacion" },
+  { start: 0, end: 2, text: "Invitación web personalizada" },
+  { start: 2, end: 5, text: "Cuenta regresiva + ubicación" },
   { start: 5, end: 8, text: "Fotos, regalos y dress code" },
-  { start: 8, end: 11, text: "Confirmacion por WhatsApp" },
+  { start: 8, end: 11, text: "Confirmación por WhatsApp" },
   { start: 11, end: 13, text: "@invitacionesweb.ar" },
 ];
 
@@ -41,12 +41,12 @@ function demo(slug, title) {
 }
 
 export const marketingAssets = [
-  demo("quince-glam", "Invitacion web para 15 anos"),
-  demo("boda-elegante", "Invitacion web para bodas"),
-  demo("bautismo-delicado", "Invitacion web para bautismo"),
-  demo("cumple", "Invitacion web para cumpleanos"),
-  demo("recibida-moderna", "Invitacion web para recibidas"),
-  demo("deluxe-personalizada", "Invitacion web Plan Deluxe"),
+  demo("quince-glam", "Invitación web para 15 años"),
+  demo("boda-elegante", "Invitación web para bodas"),
+  demo("bautismo-delicado", "Invitación web para bautismo"),
+  demo("cumple", "Invitación web para cumpleaños"),
+  demo("recibida-moderna", "Invitación web para recibidas"),
+  demo("deluxe-personalizada", "Invitación web Plan Deluxe"),
 ];
 
 export const captureDefaults = {

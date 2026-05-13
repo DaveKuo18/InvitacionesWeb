@@ -1,7 +1,7 @@
 import { BodaElegante } from "../templates/boda/BodaElegante.jsx";
 import { QuinceGlam } from "../templates/quince/QuinceGlam.jsx";
 import { BautismoDelicado } from "../templates/bautismo/BautismoDelicado.jsx";
-import { CumpleInfantil } from "../templates/cumple/CumpleInfantil.jsx";
+import { Cumple } from "../templates/cumple/Cumple.jsx";
 import { RecibidaModerna } from "../templates/recibida/RecibidaModerna.jsx";
 
 export const templateRegistry = {
@@ -20,11 +20,11 @@ export const templateRegistry = {
   "bautismo-natural": BautismoDelicado,
   "bautismo-vintage": BautismoDelicado,
   "bautismo-jardin": BautismoDelicado,
-  "cumple": CumpleInfantil,
-  "cumple-kids": CumpleInfantil,
-  "cumple-noche": CumpleInfantil,
-  "cumple-pool": CumpleInfantil,
-  "cumple-black-gold": CumpleInfantil,
+  "cumple": Cumple,
+  "cumple-kids": Cumple,
+  "cumple-noche": Cumple,
+  "cumple-pool": Cumple,
+  "cumple-black-gold": Cumple,
   "recibida-moderna": RecibidaModerna,
   "recibida-minimal": RecibidaModerna,
   "recibida-bold": RecibidaModerna,

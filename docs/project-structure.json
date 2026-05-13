@@ -1,13 +1,13 @@
 {
   "name": "Invitaciones Web",
-  "purpose": "Aplicacion Vite + React para vender, mostrar y mantener invitaciones web por template y configuracion.",
+  "purpose": "Aplicacion Vite + React para vender, mostrar y mantener invitaciones web por template y configuración.",
   "routes": {
     "landing": "/",
     "demos": "/demo/:template",
     "clientInvitations": "/i/:slug"
   },
   "root": {
-    "src": "Codigo fuente de la aplicacion.",
+    "src": "Código fuente de la aplicacion.",
     "public": "Assets publicos servidos sin bundling: logo, favicon, recursos de marketing y 404.",
     "docs": "Documentacion operativa y mapas del proyecto.",
     "scripts": "Automatizaciones para generar capturas, reels y recursos comerciales.",
@@ -15,7 +15,7 @@
     "node_modules": "Dependencias instaladas.",
     "README.md": "Guia principal para correr, editar y publicar el proyecto.",
     "vercel.json": "Rewrite para que BrowserRouter funcione en Vercel.",
-    "vite.config.js": "Configuracion de Vite y React."
+    "vite.config.js": "Configuración de Vite y React."
   },
   "src": {
     "app": {
@@ -24,17 +24,17 @@
       "NotFound.jsx": "Pantalla 404 interna."
     },
     "components/modules": {
-      "HeroModule.jsx": "Portada de cada invitacion.",
+      "HeroModule.jsx": "Portada de cada invitación.",
       "CountdownModule.jsx": "Cuenta regresiva basada en dateISO.",
-      "StoryModule.jsx": "Historia, texto emocional o bloque editorial.",
-      "DetailsModule.jsx": "Datos destacados y avisos importantes.",
+      "StoryModule.jsx": "Historia, texto emociónal o bloque editorial.",
+      "DetailsModule.jsx": "Datos destacádos y avisos importantes.",
       "ItineraryModule.jsx": "Cronograma del evento.",
-      "GalleryModule.jsx": "Galeria de imagenes.",
+      "GalleryModule.jsx": "Galería de imágenes.",
       "InfoModules.jsx": "Agrupa dress code y regalos.",
       "DressCodeModule.jsx": "Indicaciones de vestimenta.",
       "GiftModule.jsx": "Alias, CBU, lista o mensaje de regalos.",
-      "RsvpModule.jsx": "Confirmacion por WhatsApp, formulario o ambos.",
-      "MusicModule.jsx": "Boton flotante para musica de fondo."
+      "RsvpModule.jsx": "Confirmación por WhatsApp, formulario o ambos.",
+      "MusicModule.jsx": "Botón flotante para música de fondo."
     },
     "components/rsvp": {
       "RsvpForm.jsx": "Formulario configurable de asistencia."
@@ -57,21 +57,21 @@
     },
     "data/invitations": {
       "index.js": "Lista de proyectos reales publicados.",
-      "valentina-15.js": "Invitacion real de ejemplo en /i/valentina-15."
+      "valentina-15.js": "Invitación real de ejemplo en /i/valentina-15."
     },
-    "data/site.js": "Contenido comercial de la landing: marca, demos destacadas, planes, extras, pasos y FAQ.",
+    "data/site.js": "Contenido comercial de la landing: marca, demos destacádas, planes, extras, pasos y FAQ.",
     "templates": {
-      "BaseInvitation.jsx": "Layout comun que renderiza modulos segun configuracion.",
+      "BaseInvitation.jsx": "Layout comun que renderiza modulos según configuración.",
       "boda/BodaElegante.jsx": "Template visual para bodas y eventos afines.",
       "quince/QuinceGlam.jsx": "Template visual para fiestas de 15.",
       "bautismo/BautismoDelicado.jsx": "Template visual para bautismos, comuniones y baby showers.",
-      "cumple/CumpleInfantil.jsx": "Template visual para cumples infantiles o adultos.",
+      "cumple/Cumple.jsx": "Template visual para cumples infantiles o adultos.",
       "recibida/RecibidaModerna.jsx": "Template visual para recibidas y eventos corporativos."
     },
     "lib": {
       "templateRegistry.js": "Mapa entre nombre de template y componente React.",
       "getDemoByTemplate.js": "Busqueda de demo por template.",
-      "getInvitationBySlug.js": "Busqueda de invitacion real por slug.",
+      "getInvitationBySlug.js": "Busqueda de invitación real por slug.",
       "getInvitationSlugFromHost.js": "Detecta subdominios de invitacionesweb.ar para abrir /i/:slug desde slug.invitacionesweb.ar.",
       "rsvpStorage.js": "Envio o almacenamiento de respuestas RSVP.",
       "whatsapp.js": "Generacion de links de WhatsApp.",
@@ -79,7 +79,7 @@
       "csv.js": "Exportacion o armado CSV."
     },
     "types": {
-      "invitation.js": "Referencia JSDoc de la estructura de invitacion."
+      "invitation.js": "Referencia JSDoc de la estructura de invitación."
     }
   },
   "mainScreenDemos": [
@@ -117,7 +117,7 @@
   "templateFamilies": {
     "bodas": ["boda-elegante", "boda-clasica", "boda-boho", "boda-minimal", "boda-tropical", "deluxe-personalizada"],
     "quince": ["quince-glam", "quince-dream", "quince-neon", "quince-editorial", "quince-pastel"],
-    "bautismo": ["bautismo-delicado", "bautismo-cielo", "bautismo-natural", "bautismo-vintage", "bautismo-jardin", "baby-shower-botanico"],
+    "bautismo": ["bautismo-delicado", "bautismo-cielo", "bautismo-natural", "bautismo-vintage", "bautismo-jardín", "baby-shower-botánico"],
     "cumple": ["cumple", "cumple-kids", "cumple-noche", "cumple-pool", "cumple-black-gold"],
     "recibida": ["recibida-moderna", "recibida-minimal", "recibida-bold", "recibida-tech", "recibida-brunch"],
     "especiales": ["aniversario-clasico", "evento-corporativo"]
@@ -126,13 +126,13 @@
     "countdown": "Todas las demos base lo muestran.",
     "mapsAndLocation": "Todas las demos base tienen location y mapsUrl.",
     "itinerary": "Demos base y variantes principales incluyen cronograma.",
-    "gallery": "Demos base incluyen galeria.",
+    "gallery": "Demos base incluyen galería.",
     "dressCode": "Demos base y variantes incluyen dress code.",
-    "giftsAliasCbu": "Bodas, cumple, recibida, bautismo, quince y deluxe muestran alias; deluxe tambien muestra CBU.",
+    "giftsAliasCbu": "Bodas, cumple, recibida, bautismo, quince y deluxe muestran alias; deluxe también muestra CBU.",
     "rsvpWhatsapp": "Boda, bautismo y cumple usan WhatsApp.",
     "rsvpForm": "Recibida moderna usa formulario.",
     "rsvpBoth": "Quince glam y deluxe muestran WhatsApp + formulario.",
-    "music": "Quince neon activa musica de fondo para mostrar el boton flotante."
+    "music": "Quince neon activa música de fondo para mostrar el botón flotante."
   },
   "publicAssets": {
     "brand": "Logo SVG y favicon.",

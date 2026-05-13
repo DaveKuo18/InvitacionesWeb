@@ -1,6 +1,6 @@
 # RSVP con Google Sheets y Apps Script
 
-Esta opcion sirve para invitaciones premium/deluxe: el formulario de la invitacion hace un `POST` a un Web App de Google Apps Script y cada confirmacion queda guardada en una hoja.
+Esta opción sirve para invitaciones premium/deluxe: el formulario de la invitación hace un `POST` a un Web App de Google Apps Script y cada confirmación queda guardada en una hoja.
 
 ## 1. Crear el Sheet
 
@@ -9,7 +9,7 @@ Esta opcion sirve para invitaciones premium/deluxe: el formulario de la invitaci
 3. En la primera fila agregar estas columnas:
 
 ```text
-fecha, slug, evento, nombre, cantidad, telefono, email, mensaje, datos_extra_json
+fecha, slug, evento, nombre, cantidad, teléfono, email, mensaje, datos_extra_json
 ```
 
 ## 2. Crear el Apps Script
@@ -30,7 +30,7 @@ function doPost(e) {
     payload.eventTitle || "",
     values.nombre || "",
     values.cantidad || "",
-    values.telefono || "",
+    values.teléfono || "",
     values.email || "",
     values.mensaje || "",
     JSON.stringify(values),
@@ -50,7 +50,7 @@ function doPost(e) {
 4. Acceso: `Cualquier usuario`.
 5. Copiar la URL generada.
 
-## 4. Configurar la invitacion
+## 4. Configurar la invitación
 
 En `src/data/invitations/mi-cliente.js`:
 
@@ -68,4 +68,4 @@ rsvp: {
 }
 ```
 
-Tambien se puede usar `mode: "both"` para mostrar WhatsApp y formulario juntos.
+También se puede usar `mode: "both"` para mostrar WhatsApp y formulario juntos.

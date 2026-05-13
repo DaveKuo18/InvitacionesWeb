@@ -19,7 +19,7 @@ export const defaultModules = {
 export const defaultRsvpFields = [
   { name: "nombre", label: "Nombre y apellido", type: "text", required: true },
   { name: "cantidad", label: "Cantidad de asistentes", type: "number", required: true },
-  { name: "telefono", label: "Telefono", type: "tel", required: false },
+  { name: "telefono", label: "Teléfono", type: "tel", required: false },
   { name: "email", label: "Email", type: "email", required: false },
   { name: "mensaje", label: "Mensaje", type: "textarea", required: false },
 ];

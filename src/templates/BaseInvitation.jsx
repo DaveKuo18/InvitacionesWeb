@@ -45,7 +45,7 @@ export function BaseInvitation({ config }) {
         <p className="font-serif text-3xl" style={{ color: theme.primaryDark }}>{config.title}</p>
         <p className="mt-3 text-sm uppercase tracking-[0.2em]" style={{ color: theme.muted }}>{config.displayDate}</p>
         <p className="mt-6 text-sm" style={{ color: theme.muted }}>
-          Invitacion creada por <strong>{config.brand?.name || "Invitaciones Web"}</strong> {config.brand?.instagram ? `· ${config.brand.instagram}` : ""}
+          Invitación creada por <strong>{config.brand?.name || "Invitaciones Web"}</strong> {config.brand?.instagram ? `· ${config.brand.instagram}` : ""}
         </p>
       </footer>
     </main>
