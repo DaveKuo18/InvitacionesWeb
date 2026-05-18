@@ -24,7 +24,7 @@ export const bodaEleganteDemo = {
       { src: "https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=85", alt: "Brindis de boda" },
     ],
   },
-  location: { title: "Ceremonia y recepción", name: "Iglesia Bautista Independiente Misionera", address: "El Lenatero 2028, Ciudad Evita, Buenos Aires", time: "17:00 hs", mapsUrl: "https://maps.google.com/" },
+  location: { title: "Ceremonia y recepción", name: "Salon Demo Aurora", address: "Calle Ficticia 2028, Ciudad Demo", time: "17:00 hs", mapsUrl: "https://maps.google.com/" },
   story: { eyebrow: "Con amor", title: "Nuestra historia", text: "Dios nos ha bendecido al permitir que juntos conozcamos de Su amor. Por Su gracia encamino nuestras vidas y nos permite servirlo juntos.", quote: "Las muchas aguas no podrán apagar el amor, ni lo ahogaran los rios." },
   details: { eyebrow: "El gran día", intro: "Estos son los datos principales para que puedas acompañarnos.", cardTitle: "Todo listo para celebrar", cardText: "Este bloque puede adaptarse para ceremonia civil, iglesia, recepción, fiesta, parking, hospedaje o cualquier aviso importante." },
   timelineTitle: "Un día para compartir juntos",
@@ -37,6 +37,6 @@ export const bodaEleganteDemo = {
   galleryTitle: "Galería",
   galleryText: "Algunas imágenes nuestras que nos ha gustado compartir.",
   dressCode: { enabled: true, title: "Elegante", note: "Sugerimos ropa formal. Reservamos el blanco para la novia." },
-  gift: { enabled: true, text: "Tu presencia ya es un regalo muy especial. Si querés ayudarnos a formar nuestro hogar, podés hacerlo con un obsequio o transferencia.", alias: "cami.hugo.boda", cbu: "" },
+  gift: { enabled: true, text: "Tu presencia ya es un regalo muy especial. Si querés ayudarnos a formar nuestro hogar, podés hacerlo con un obsequio o transferencia.", alias: "demo.boda", cbu: "" },
   rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "10 de agosto de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la boda de Cami y Hugo. Mi nombre es:" },
 };

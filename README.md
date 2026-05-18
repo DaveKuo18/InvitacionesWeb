@@ -16,6 +16,8 @@ Para configurar el WhatsApp comercial de la landing, copiar `.env.example` a `.e
 VITE_CONTACT_WHATSAPP=5491112345678
 ```
 
+Para levantar una version publica y aislada de portfolio, ver [`README_DEMO.md`](README_DEMO.md).
+
 Rutas principales:
 
 ```text

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { Send } from "lucide-react";
 import { submitRsvp } from "../../lib/rsvpStorage.js";
+import { DEMO_DISABLED_MESSAGE, isDemoInvitation } from "../../config/env.js";
 
 export function RsvpForm({ config, theme }) {
   const form = config.rsvp?.form;
@@ -9,6 +10,7 @@ export function RsvpForm({ config, theme }) {
   const [values, setValues] = useState(initialValues);
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState("");
+  const isDemo = isDemoInvitation(config);
 
   if (!form?.enabled) return null;
 
@@ -71,6 +73,7 @@ export function RsvpForm({ config, theme }) {
         ))}
       </div>
       {status === "success" && <p className="mt-5 rounded-2xl bg-green-50 px-4 py-3 text-sm font-semibold text-green-800">Confirmación enviada. Muchas gracias.</p>}
+      {isDemo && <p className="mt-5 rounded-2xl bg-amber-50 px-4 py-3 text-sm font-semibold text-amber-900">{DEMO_DISABLED_MESSAGE} El envio se simula y no se guardan datos reales.</p>}
       {status === "error" && <p className="mt-5 rounded-2xl bg-red-50 px-4 py-3 text-sm font-semibold text-red-800">{error}</p>}
       <button
         type="submit"

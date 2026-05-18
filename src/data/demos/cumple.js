@@ -24,7 +24,7 @@ export const CumpleDemo = {
       { src: "https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?auto=format&fit=crop&w=900&q=85", alt: "Amigos festejando" },
     ],
   },
-  location: { title: "Fiesta de cumple", name: "Terraza Central", address: "Av. Fiesta 789, Buenos Aires", time: "22:00 hs", mapsUrl: "https://maps.google.com/" },
+  location: { title: "Fiesta de cumple", name: "Terraza Demo Central", address: "Av. Fiesta Demo 789, Ciudad Demo", time: "22:00 hs", mapsUrl: "https://maps.google.com/" },
   story: { eyebrow: "A festejar", title: "Otro año, otra excusa perfecta", text: "Quiero celebrar este cumpleaños como se merece: con amigos, familia, música y una noche relajada para disfrutar de principio a fin.", quote: "La mejor parte de cumplir años es tener con quien celebrarlo." },
   details: { eyebrow: "La juntada", intro: "Acá tenes todo lo importante para llegar y disfrutar.", cardTitle: "Plan simple", cardText: "Este bloque se puede personalizar para fiesta temática, cena, pool party, brunch, sorpresa o celebración infantil." },
   timelineTitle: "Plan de la fiesta",
@@ -35,6 +35,6 @@ export const CumpleDemo = {
     { time: "00:30", title: "Baile", description: "Música para cerrar arriba." },
   ],
   dressCode: { enabled: true, title: "Cómodo para bailar", note: "Si hay temática, colores sugeridos o pileta, este es el lugar para avisarlo." },
-  gift: { enabled: true, text: "Lo importante es que vengas. Si querés sumar al regalo grupal, podés usar este espacio para dejar alias o link.", alias: "dani.cumple30", cbu: "" },
+  gift: { enabled: true, text: "Lo importante es que vengas. Si querés sumar al regalo grupal, podés usar este espacio para dejar alias o link.", alias: "demo.cumple", cbu: "" },
   rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "10 de julio de 2026", whatsappMessage: "Hola, confirmo mi asistencia al cumple de Dani. Mi nombre es:" },
 };

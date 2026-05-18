@@ -1,3 +1,5 @@
+import { DEMO_DISABLED_MESSAGE, isDemoInvitation } from "../config/env.js";
+
 export async function submitRsvp(config, values) {
   const storage = config.rsvp?.form?.storage || {};
   const payload = {
@@ -6,6 +8,11 @@ export async function submitRsvp(config, values) {
     submittedAt: new Date().toISOString(),
     values,
   };
+
+  if (isDemoInvitation(config)) {
+    console.info(`${DEMO_DISABLED_MESSAGE} RSVP simulado.`, payload);
+    return { ...payload, simulated: true };
+  }
 
   if (storage.provider === "webhook" && storage.webhookUrl) {
     const response = await fetch(storage.webhookUrl, {
@@ -17,8 +24,7 @@ export async function submitRsvp(config, values) {
     return payload;
   }
 
-  const isDemo = config.slug?.startsWith("demo-") || config.status === "demo";
-  if (isDemo || import.meta.env.DEV) {
+  if (import.meta.env.DEV) {
     console.info("RSVP simulado porque no hay webhook configurado.", payload);
     return payload;
   }

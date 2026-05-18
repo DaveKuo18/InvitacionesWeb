@@ -26,7 +26,7 @@ export const quinceGlamDemo = {
       { src: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85", alt: "Pista de baile" },
     ],
   },
-  location: { title: "Fiesta de 15", name: "Salon Garden Palace", address: "Av. Siempre Viva 1234, Buenos Aires", time: "21:00 hs", mapsUrl: "https://maps.google.com/" },
+  location: { title: "Fiesta de 15", name: "Salon Demo Garden", address: "Av. Siempre Demo 1234, Ciudad Demo", time: "21:00 hs", mapsUrl: "https://maps.google.com/" },
   modules: defaultModules,
   music: { enabled: false, url: "" },
   story: { eyebrow: "Una noche soñada", title: "Empieza una etapa nueva", text: "Este día marca un momento muy especial para mi. Quiero vivirlo rodeada de familia y amigos, con una fiesta pensada para disfrutar cada detalle.", quote: "Que esta noche sea el comienzo de recuerdos que duren para siempre." },
@@ -41,7 +41,7 @@ export const quinceGlamDemo = {
   galleryTitle: "Galería",
   galleryText: "Reemplaza estas imágenes por fotos de producción, book o momentos especiales.",
   dressCode: { enabled: true, title: "Elegante sport", note: "Sugerimos colores claros, brillos o tonos que acompañen la paleta de la fiesta." },
-  gift: { enabled: true, text: "Tu presencia es lo más importante. Si querés hacerme un regalo, podés usar este espacio.", alias: "valen.15", cbu: "" },
+  gift: { enabled: true, text: "Tu presencia es lo más importante. Si querés hacerme un regalo, podés usar este espacio.", alias: "demo.quince", cbu: "" },
   rsvp: {
     enabled: true,
     mode: "both",

@@ -1,3 +1,5 @@
+import { DEMO_MODE } from "../config/env.js";
+
 export const brand = {
   name: "Invitaciones Web AR",
   shortName: "Invitaciones Web",
@@ -11,6 +13,7 @@ export const brand = {
 };
 
 export function whatsappUrl(message = brand.whatsapp.message) {
+  if (DEMO_MODE) return "#demo-disabled";
   return `https://wa.me/${brand.whatsapp.number}?text=${encodeURIComponent(message)}`;
 }
 

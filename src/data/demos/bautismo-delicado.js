@@ -24,7 +24,7 @@ export const bautismoDelicadoDemo = {
       { src: "https://images.unsplash.com/photo-1478144592103-25e218a04891?auto=format&fit=crop&w=900&q=85", alt: "Mesa dulce clara" },
     ],
   },
-  location: { title: "Ceremonia y almuerzo", name: "Parroquia San Jose", address: "Calle de la Familia 123, Buenos Aires", time: "11:00 hs", mapsUrl: "https://maps.google.com/" },
+  location: { title: "Ceremonia y almuerzo", name: "Capilla Demo San Jose", address: "Calle de la Familia Demo 123, Ciudad Demo", time: "11:00 hs", mapsUrl: "https://maps.google.com/" },
   story: { eyebrow: "Un día de bendición", title: "Celebramos su bautismo", text: "Queremos compartir este momento tan especial rodeados de las personas que forman parte de nuestra historia familiar.", quote: "Que este día sea el comienzo de un camino lleno de luz, amor y cuidado." },
   details: { eyebrow: "La ceremonia", intro: "Estos son los datos principales para acompañarnos.", cardTitle: "Despues celebramos juntos", cardText: "Este bloque puede adaptarse para ceremonia religiosa, almuerzo familiar, recepción, estacionamiento o detalles para niños." },
   timelineTitle: "Momentos del día",
@@ -35,6 +35,6 @@ export const bautismoDelicadoDemo = {
     { time: "15:00", title: "Mesa dulce", description: "Brindis, torta y recuerdos." },
   ],
   dressCode: { enabled: true, title: "Tonos claros", note: "Sugerimos una estética suave y familiar para acompañar la celebración." },
-  gift: { enabled: true, text: "Tu presencia es lo más importante. Si querés tener un gesto especial, podés dejar acá un alias, lista de regalos o mensaje familiar.", alias: "santino.bautismo", cbu: "" },
+  gift: { enabled: true, text: "Tu presencia es lo más importante. Si querés tener un gesto especial, podés dejar acá un alias, lista de regalos o mensaje familiar.", alias: "demo.bautismo", cbu: "" },
   rsvp: { ...quinceGlamDemo.rsvp, mode: "whatsapp", deadline: "25 de septiembre de 2026", whatsappMessage: "Hola, confirmo mi asistencia al bautismo de Santino. Mi nombre es:" },
 };

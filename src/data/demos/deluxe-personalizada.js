@@ -24,7 +24,7 @@ export const deluxePersonalizadaDemo = {
       { src: "https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=900&q=85", alt: "Brindis de celebración" },
     ],
   },
-  location: { title: "Ceremonia y fiesta", name: "Estancia La Magnolia", address: "Ruta 8 km 62, Buenos Aires", time: "18:30 hs", mapsUrl: "https://maps.google.com/" },
+  location: { title: "Ceremonia y fiesta", name: "Estancia Demo Magnolia", address: "Ruta Demo km 62, Ciudad Demo", time: "18:30 hs", mapsUrl: "https://maps.google.com/" },
   story: {
     eyebrow: "Experiencia a medida",
     title: "Una invitación con todo el recorrido del evento",
@@ -47,7 +47,7 @@ export const deluxePersonalizadaDemo = {
   galleryTitle: "Galería extendida",
   galleryText: "El plan Deluxe puede sumar más imágenes, video, música o secciones especiales según el evento.",
   dressCode: { enabled: true, title: "Elegante de gala", note: "También se puede mostrar paleta de colores, inspiracion visual o indicaciones especiales." },
-  gift: { enabled: true, text: "Espacio para alias, CBU, lista de regalos, luna de miel, links externos o mensajes personalizados.", alias: "lucia.mateo.deluxe", cbu: "0000003100098765432101" },
+  gift: { enabled: true, text: "Espacio para alias, CBU, lista de regalos, luna de miel, links externos o mensajes personalizados.", alias: "demo.deluxe", cbu: "" },
   rsvp: {
     ...quinceGlamDemo.rsvp,
     mode: "both",

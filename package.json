@@ -5,9 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:demo": "vite --mode demo",
     "build": "vite build",
+    "build:demo": "vite build --mode demo",
     "lint": "eslint .",
     "preview": "vite preview",
+    "demo:seed": "node scripts/seed-demo.mjs",
+    "demo:reset": "node scripts/reset-demo.mjs",
     "generate:assets": "node scripts/generate-demo-assets.mjs",
     "assets:demo": "node scripts/generate-marketing-assets.mjs",
     "assets:all": "node scripts/generate-marketing-assets.mjs --all"

@@ -24,11 +24,11 @@ export const recibidaModernaDemo = {
       { src: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=900&q=85", alt: "Fiesta" },
     ],
   },
-  location: { title: "Fiesta de recibida", name: "Distrito Eventos", address: "Av. Universidad 2026, Buenos Aires", time: "20:00 hs", mapsUrl: "https://maps.google.com/" },
+  location: { title: "Fiesta de recibida", name: "Distrito Demo Eventos", address: "Av. Universidad Demo 2026, Ciudad Demo", time: "20:00 hs", mapsUrl: "https://maps.google.com/" },
   story: { eyebrow: "Lo logramos", title: "Un cierre y un comienzo", text: "Esta celebración resume años de estudio, apoyo y ganas. Magui quiere compartirla con quienes estuvieron cerca en el camino.", quote: "Todo esfuerzo merece un brindis a la altura." },
   details: { eyebrow: "La fiesta", intro: "Estos son los datos para venir a celebrar.", cardTitle: "Brindis, cena y baile", cardText: "Ideal para recibidas universitarias, egresos, actos y celebraciones profesionales." },
   timelineTitle: "Plan de la noche",
   dressCode: { enabled: true, title: "Urbano elegante", note: "Veni cómodo, con ganas de brindar y bailar." },
-  gift: { enabled: true, text: "Tu compañía es el mejor regalo. Si querés sumar a la celebración, podés usar este alias.", alias: "magui.recibida", cbu: "" },
+  gift: { enabled: true, text: "Tu compañía es el mejor regalo. Si querés sumar a la celebración, podés usar este alias.", alias: "demo.recibida", cbu: "" },
   rsvp: { ...quinceGlamDemo.rsvp, mode: "form", deadline: "28 de noviembre de 2026", whatsappMessage: "Hola, confirmo mi asistencia a la recibida de Magui. Mi nombre es:" },
 };

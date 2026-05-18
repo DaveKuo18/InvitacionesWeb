@@ -24,7 +24,7 @@ export const babyShowerDemo = {
       { src: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=900&q=85", alt: "Manta y detalles suaves" },
     ],
   },
-  location: { title: "Baby shower", name: "Casa de la familia", address: "Av. de los Álamos 123, Buenos Aires", time: "16:30 hs", mapsUrl: "https://maps.google.com/" },
+  location: { title: "Baby shower", name: "Casa Demo Familiar", address: "Av. de los Alamos Demo 123, Ciudad Demo", time: "16:30 hs", mapsUrl: "https://maps.google.com/" },
   story: { eyebrow: "Te esperamos", title: "Una tarde para esperar a Caro", text: "Queremos compartir una merienda tranquila, con juegos, regalitos y muchas fotos para recordar esta etapa tan especial.", quote: "Ya te estamos esperando con todo el amor." },
   details: { eyebrow: "La merienda", intro: "Estos son los datos principales para acompañarnos.", cardTitle: "Merienda, juegos y recuerdos", cardText: "Este bloque puede adaptarse para lista de regalos, pañales, mesa dulce, juegos, horario de llegada o indicaciones para la familia." },
   timelineTitle: "Plan de la tarde",
@@ -37,6 +37,6 @@ export const babyShowerDemo = {
   galleryTitle: "Detalles",
   galleryText: "Fotos de inspiración, decoración, familia o momentos especiales.",
   dressCode: { enabled: true, title: "Tonos suaves", note: "Sugerimos rosa viejo, verde claro, blanco, beige o tonos pastel." },
-  gift: { enabled: true, text: "Tu presencia es lo más importante. Si querés sumar a la llegada de Caro, podés usar este alias o consultar la lista de regalos.", alias: "caro.baby", cbu: "" },
+  gift: { enabled: true, text: "Tu presencia es lo más importante. Si querés sumar a la llegada de Caro, podés usar este alias o consultar la lista de regalos.", alias: "demo.baby", cbu: "" },
   rsvp: { ...quinceGlamDemo.rsvp, mode: "both", deadline: "20 de agosto de 2026", whatsappMessage: "Hola, confirmo mi asistencia al baby shower de Caro. Mi nombre es:" },
 };

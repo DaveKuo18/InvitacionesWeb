@@ -2,10 +2,12 @@ import { CalendarDays, Clock, MapPin, Sparkles } from "lucide-react";
 import { Section } from "../shared/Section.jsx";
 import { SectionHeader } from "../shared/SectionHeader.jsx";
 import { hexToRgba } from "../../lib/colors.js";
+import { DEMO_DISABLED_MESSAGE, isDemoInvitation, notifyDemoDisabled } from "../../config/env.js";
 
 export function DetailsModule({ config, theme }) {
   const details = config.details || {};
   const location = config.location || {};
+  const isDemo = isDemoInvitation(config);
   return (
     <Section id="detalles" data-capture="details">
       <SectionHeader eyebrow={details.eyebrow || "Detalles"} title={config.displayDate} text={details.intro} theme={theme} />
@@ -27,7 +29,13 @@ export function DetailsModule({ config, theme }) {
           </div>
           <h3 className="font-serif text-3xl">{details.cardTitle || "Todo listo para celebrar"}</h3>
           <p className="mt-4 leading-8" style={{ color: theme.muted }}>{details.cardText}</p>
-          {location.mapsUrl && (
+          {location.mapsUrl && isDemo && (
+            <button type="button" onClick={notifyDemoDisabled} className="mt-6 inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] shadow-lg transition hover:-translate-y-0.5" style={{ background: theme.primaryDark, color: "white" }}>
+              <MapPin size={18} /> Abrir ubicacion
+            </button>
+          )}
+          {location.mapsUrl && isDemo && <p className="mt-3 text-sm font-semibold" style={{ color: theme.muted }}>{DEMO_DISABLED_MESSAGE}</p>}
+          {location.mapsUrl && !isDemo && (
             <a href={location.mapsUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-bold uppercase tracking-[0.16em] shadow-lg transition hover:-translate-y-0.5" style={{ background: theme.primaryDark, color: "white" }}>
               <MapPin size={18} /> Abrir ubicación
             </a>

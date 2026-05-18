@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { notifyDemoDisabled } from "../config/env.js";
 import { demoInvitations } from "../data/demos/index.js";
 import { brand, demoCards, eventTypes, extras, faqs, includes, plans, steps, whatsappUrl } from "../data/site.js";
 
@@ -65,6 +66,13 @@ function scrollToSection(id) {
   document.querySelector(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
+function handleDemoAction(event, href) {
+  if (href === "#demo-disabled") {
+    event.preventDefault();
+    notifyDemoDisabled();
+  }
+}
+
 function SectionHeading({ eyebrow, title, text, align = "left" }) {
   return (
     <div className={align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl"}>
@@ -79,6 +87,7 @@ function PrimaryButton({ href, children, className = "" }) {
   return (
     <a
       href={href}
+      onClick={(event) => handleDemoAction(event, href)}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
       className={`inline-flex items-center justify-center gap-3 rounded-full bg-[var(--color-gold)] px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-white shadow-[0_16px_34px_rgba(173,128,60,0.28)] transition hover:-translate-y-0.5 hover:bg-[var(--color-gold-dark)] ${className}`}
@@ -125,6 +134,7 @@ function LightButton({ href, children, className = "" }) {
   return (
     <a
       href={href}
+      onClick={(event) => handleDemoAction(event, href)}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
       className={`inline-flex items-center justify-center gap-3 rounded-full bg-white px-6 py-4 text-sm font-bold uppercase tracking-[0.12em] text-[var(--color-text)] shadow-[0_16px_34px_rgba(255,255,255,0.16)] transition hover:-translate-y-0.5 hover:bg-[var(--color-bg-soft)] ${className}`}
@@ -218,7 +228,7 @@ export function Landing() {
             <ScrollLink href="#planes">Planes</ScrollLink>
             <ScrollLink href="#faq">FAQ</ScrollLink>
           </div>
-          <a href={consultUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-text)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[var(--color-gold-dark)]">
+          <a href={consultUrl} onClick={(event) => handleDemoAction(event, consultUrl)} target={consultUrl.startsWith("http") ? "_blank" : undefined} rel={consultUrl.startsWith("http") ? "noreferrer" : undefined} className="inline-flex items-center gap-2 rounded-full bg-[var(--color-text)] px-4 py-3 text-sm font-bold text-white transition hover:bg-[var(--color-gold-dark)]">
             <MessageCircle size={17} /> <span className="hidden sm:inline">WhatsApp</span>
           </a>
         </nav>
@@ -444,8 +454,9 @@ export function Landing() {
 
       <a
         href={consultUrl}
-        target="_blank"
-        rel="noreferrer"
+        onClick={(event) => handleDemoAction(event, consultUrl)}
+        target={consultUrl.startsWith("http") ? "_blank" : undefined}
+        rel={consultUrl.startsWith("http") ? "noreferrer" : undefined}
         aria-label="Consultar por WhatsApp"
         className="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[var(--color-whatsapp)] text-white shadow-[0_14px_34px_rgba(37,211,102,0.36)] transition hover:-translate-y-1"
       >
@@ -467,7 +478,7 @@ export function Landing() {
             <a href={brand.instagramUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] px-4 py-3 text-[var(--color-text)]">
               <Heart size={17} /> {brand.instagram}
             </a>
-            <a href={consultUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[var(--color-text)] px-4 py-3 text-white">
+            <a href={consultUrl} onClick={(event) => handleDemoAction(event, consultUrl)} target={consultUrl.startsWith("http") ? "_blank" : undefined} rel={consultUrl.startsWith("http") ? "noreferrer" : undefined} className="inline-flex items-center gap-2 rounded-full bg-[var(--color-text)] px-4 py-3 text-white">
               <MessageCircle size={17} /> WhatsApp
             </a>
           </div>

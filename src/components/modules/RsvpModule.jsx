@@ -2,6 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { Section } from "../shared/Section.jsx";
 import { buildWhatsAppUrl } from "../../lib/whatsapp.js";
 import { RsvpForm } from "../rsvp/RsvpForm.jsx";
+import { DEMO_DISABLED_MESSAGE, isDemoInvitation, notifyDemoDisabled } from "../../config/env.js";
 
 export function RsvpModule({ config, theme }) {
   const rsvp = config.rsvp || {};
@@ -10,6 +11,7 @@ export function RsvpModule({ config, theme }) {
   const mode = rsvp.mode || "whatsapp";
   const showWhatsApp = mode === "whatsapp" || mode === "both";
   const showForm = mode === "form" || mode === "both";
+  const isDemo = isDemoInvitation(config);
   const whatsappUrl = buildWhatsAppUrl({
     number: rsvp.whatsappNumber,
     message: rsvp.whatsappMessage,
@@ -26,7 +28,15 @@ export function RsvpModule({ config, theme }) {
             {rsvp.text || "Te esperamos. Confirmar antes del"} {rsvp.deadline && <strong>{rsvp.deadline}</strong>}.
           </p>
           {mode === "both" && <p className="mt-4 text-sm uppercase tracking-[0.18em] text-white/75">Elegí la opción que prefieras</p>}
-          {showWhatsApp && whatsappUrl && (
+          {showWhatsApp && isDemo && (
+            <>
+              <button type="button" onClick={notifyDemoDisabled} className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] shadow-xl transition hover:-translate-y-0.5" style={{ color: theme.primaryDark }}>
+                <MessageCircle size={18} /> Confirmar por WhatsApp
+              </button>
+              <p className="mt-4 text-sm font-semibold text-white/85">{DEMO_DISABLED_MESSAGE}</p>
+            </>
+          )}
+          {showWhatsApp && !isDemo && whatsappUrl && (
             <a href={whatsappUrl} target="_blank" rel="noreferrer" className="mt-8 inline-flex items-center gap-3 rounded-full bg-white px-8 py-4 text-sm font-bold uppercase tracking-[0.18em] shadow-xl transition hover:-translate-y-0.5" style={{ color: theme.primaryDark }}>
               <MessageCircle size={18} /> Confirmar por WhatsApp
             </a>
